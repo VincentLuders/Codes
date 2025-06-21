@@ -1,0 +1,25 @@
+/* Custom CSS for VSCode - Center Command Palette with Backdrop Blur */
+
+/* Center the command palette */
+.quick-input-widget {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+    z-index: 10000 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Darken/blur main window when command palette is open */
+.monaco-grid-view {
+    transition: filter 0.2s ease;
+}
+
+.monaco-workbench:has(> .quick-input-widget):not(:has(> .quick-input-widget[style*="display: none"])) {
+    .monaco-grid-view {
+        filter: blur(3px) brightness(70%) !important;
+    }
+} 
