@@ -22,4 +22,107 @@
     .monaco-grid-view {
         filter: blur(3px) brightness(70%) !important;
     }
+}
+
+/* Apple-style Scrollbar Styling for VS Code */
+
+/* Global Firefox scrollbar styling - applies everywhere */
+* {
+    scrollbar-width: thin !important;
+    scrollbar-color: rgba(143, 143, 143, 0.5) transparent !important;
+}
+
+/* Global WebKit scrollbar styling - applies to ALL scrollbars */
+*::-webkit-scrollbar {
+    width: 6px !important;
+    height: 6px !important;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent !important;
+    border-radius: 3px !important;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(143, 143, 143, 0.5) !important;
+    border-radius: 3px !important;
+    border: none !important;
+    min-height: 30px !important;
+    transition: background-color 0.2s ease !important;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(143, 143, 143, 0.7) !important;
+}
+
+*::-webkit-scrollbar-thumb:active {
+    background-color: rgba(143, 143, 143, 0.9) !important;
+}
+
+*::-webkit-scrollbar-corner {
+    background: transparent !important;
+}
+
+/* Ensure VS Code's custom scrollbar elements follow our styling */
+.monaco-scrollable-element > .scrollbar > .slider {
+    background: rgba(143, 143, 143, 0.5) !important;
+    border-radius: 3px !important;
+    width: 6px !important;
+    transition: background 0.2s ease !important;
+}
+
+.monaco-scrollable-element > .scrollbar.vertical {
+    width: 6px !important;
+}
+
+.monaco-scrollable-element > .scrollbar.horizontal {
+    height: 6px !important;
+}
+
+.monaco-scrollable-element > .scrollbar > .slider:hover {
+    background: rgba(143, 143, 143, 0.7) !important;
+}
+
+.monaco-scrollable-element > .scrollbar > .slider.active {
+    background: rgba(143, 143, 143, 0.9) !important;
+}
+
+/* Ensure Cursor AI chat scrollbars use our styling */
+.inline-chat-widget *::-webkit-scrollbar,
+.interactive-editor *::-webkit-scrollbar,
+.monaco-workbench .part.sidebar *::-webkit-scrollbar,
+.monaco-workbench .part.panel *::-webkit-scrollbar {
+    width: 6px !important;
+    height: 6px !important;
+}
+
+/* Terminal specific styling to ensure it follows our design */
+.xterm-viewport::-webkit-scrollbar {
+    width: 6px !important;
+}
+
+/* Explorer and other tree views */
+.monaco-tree .monaco-scrollable-element > .scrollbar,
+.monaco-list .monaco-scrollable-element > .scrollbar {
+    width: 6px !important;
+}
+
+/* Editor minimap scrollbar */
+.minimap-slider .minimap-slider-horizontal {
+    height: 6px !important;
+}
+
+/* Settings and extension views */
+.settings-editor > .settings-body .settings-tree-container .monaco-scrollable-element > .scrollbar,
+.extensions-viewlet .extensions .monaco-scrollable-element > .scrollbar {
+    width: 6px !important;
+}
+
+/* Override any inline styles that might be setting different widths */
+.monaco-scrollable-element > .scrollbar.vertical[style*="width"] {
+    width: 6px !important;
+}
+
+.monaco-scrollable-element > .scrollbar.horizontal[style*="height"] {
+    height: 6px !important;
 } 
