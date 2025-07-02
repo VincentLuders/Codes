@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Glassmorphism Header</title>
+    <style>
+        /* Reset and base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Root variables for consistent theming */
+        }
+
+        html,
+        body {
+            height: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated Morphing Gradients Background */
+        .gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+        }
+
+        .gradient-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            mix-blend-mode: multiply;
+            animation-duration: 13.33s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            opacity: 0.8;
+        }
+
+        .gradient-blob:nth-child(1) {
+            width: 166px;
+            height: 166px;
+            background: linear-gradient(45deg, #2308eb, #b004ef);
+            bottom: 10%;
+            left: 10%;
+            animation-name: morph1;
+            animation-delay: 0s;
+        }
+
+        .gradient-blob:nth-child(2) {
+            width: 133px;
+            height: 133px;
+            background: linear-gradient(135deg, #9501fd, #5e04ed);
+            top: 60%;
+            right: 10%;
+            animation-name: morph2;
+            animation-delay: -3.33s;
+        }
+
+        .gradient-blob:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(225deg, #3108cc, #2308eb);
+            bottom: 20%;
+            left: 20%;
+            animation-name: morph3;
+            animation-delay: -6.67s;
+        }
+
+        .gradient-blob:nth-child(4) {
+            width: 116px;
+            height: 116px;
+            background: linear-gradient(315deg, #b004ef, #9501fd);
+            top: 30%;
+            right: 30%;
+            animation-name: morph4;
+            animation-delay: -10s;
+        }
+
+        .gradient-blob:nth-child(5) {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(90deg, #5e04ed, #3108cc);
+            top: 80%;
+            left: 60%;
+            animation-name: morph5;
+            animation-delay: -1.11s;
+        }
+
+        .gradient-blob:nth-child(6) {
+            width: 140px;
+            height: 140px;
+            background: linear-gradient(180deg, #2308eb, #9501fd);
+            top: 10%;
+            right: 50%;
+            animation-name: morph6;
+            animation-delay: -4.44s;
+        }
+
+        .gradient-blob:nth-child(7) {
+            width: 110px;
+            height: 110px;
+            background: linear-gradient(270deg, #b004ef, #2308eb);
+            bottom: 30%;
+            right: 20%;
+            animation-name: morph7;
+            animation-delay: -7.78s;
+        }
+
+        .gradient-blob:nth-child(8) {
+            width: 130px;
+            height: 130px;
+            background: linear-gradient(60deg, #3108cc, #b004ef);
+            top: 40%;
+            left: 5%;
+            animation-name: morph8;
+            animation-delay: -11.11s;
+        }
+
+        .gradient-blob:nth-child(9) {
+            width: 125px;
+            height: 125px;
+            background: linear-gradient(120deg, #9501fd, #2308eb);
+            bottom: 5%;
+            right: 40%;
+            animation-name: morph9;
+            animation-delay: -2.22s;
+        }
+
+        .gradient-blob:nth-child(10) {
+            width: 115px;
+            height: 115px;
+            background: linear-gradient(200deg, #5e04ed, #b004ef);
+            top: 20%;
+            left: 70%;
+            animation-name: morph10;
+            animation-delay: -5.56s;
+        }
+
+        .gradient-blob:nth-child(11) {
+            width: 105px;
+            height: 105px;
+            background: linear-gradient(300deg, #2308eb, #5e04ed);
+            bottom: 40%;
+            left: 40%;
+            animation-name: morph11;
+            animation-delay: -8.89s;
+        }
+
+        .gradient-blob:nth-child(12) {
+            width: 135px;
+            height: 135px;
+            background: linear-gradient(240deg, #3108cc, #9501fd);
+            top: 70%;
+            right: 60%;
+            animation-name: morph12;
+            animation-delay: -12.22s;
+        }
+
+        @keyframes morph1 {
+            0%, 100% {
+                transform: translateX(0) translateY(0) scale(1);
+                border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            }
+            25% {
+                transform: translateX(-120px) translateY(80px) scale(1.1);
+                border-radius: 40% 60% 70% 30% / 40% 70% 30% 60%;
+            }
+            50% {
+                transform: translateX(-200px) translateY(50px) scale(0.9);
+                border-radius: 30% 70% 40% 60% / 70% 40% 60% 30%;
+            }
+            75% {
+                transform: translateX(-150px) translateY(120px) scale(1.05);
+                border-radius: 70% 30% 60% 40% / 30% 60% 40% 70%;
+            }
+        }
+
+        @keyframes morph2 {
+            0%, 100% {
+                transform: translateX(0) translateY(0) scale(1);
+                border-radius: 50% 50% 80% 20% / 30% 70% 20% 80%;
+            }
+            33% {
+                transform: translateX(120px) translateY(-80px) scale(1.2);
+                border-radius: 80% 20% 50% 50% / 70% 30% 80% 20%;
+            }
+            66% {
+                transform: translateX(200px) translateY(150px) scale(0.8);
+                border-radius: 20% 80% 30% 70% / 50% 50% 20% 80%;
+            }
+        }
+
+        @keyframes morph3 {
+            0%, 100% {
+                transform: translateX(0) translateY(0) scale(1) rotate(0deg);
+                border-radius: 40% 60% 60% 40% / 60% 40% 40% 60%;
+            }
+            20% {
+                transform: translateX(-120px) translateY(80px) scale(1.15) rotate(72deg);
+                border-radius: 60% 40% 40% 60% / 40% 60% 60% 40%;
+            }
+            40% {
+                transform: translateX(-200px) translateY(-40px) scale(0.85) rotate(144deg);
+                border-radius: 80% 20% 70% 30% / 20% 80% 30% 70%;
+            }
+            60% {
+                transform: translateX(-150px) translateY(-120px) scale(1.1) rotate(216deg);
+                border-radius: 30% 70% 20% 80% / 70% 30% 80% 20%;
+            }
+            80% {
+                transform: translateX(-80px) translateY(60px) scale(0.95) rotate(288deg);
+                border-radius: 70% 30% 80% 20% / 30% 70% 20% 80%;
+            }
+        }
+
+        @keyframes morph4 {
+            0%, 100% {
+                transform: translateX(0) translateY(0) scale(1);
+                border-radius: 70% 30% 50% 50% / 30% 70% 50% 50%;
+            }
+            25% {
+                transform: translateX(150px) translateY(-80px) scale(1.2);
+                border-radius: 50% 50% 30% 70% / 50% 50% 70% 30%;
+            }
+            50% {
+                transform: translateX(200px) translateY(-150px) scale(1.3);
+                border-radius: 30% 70% 50% 50% / 70% 30% 50% 50%;
+            }
+            75% {
+                transform: translateX(120px) translateY(-200px) scale(1.1);
+                border-radius: 60% 40% 40% 60% / 40% 60% 60% 40%;
+            }
+        }
+
+        @keyframes morph5 {
+            0%, 100% {
+                transform: translateX(0) translateY(0) scale(1);
+                border-radius: 50% 50% 50% 50%;
+            }
+            50% {
+                transform: translateX(-60px) translateY(40px) scale(1.1);
+                border-radius: 30% 70% 70% 30%;
+            }
+        }
+
+        @keyframes morph6 {
+            0%, 100% {
+                transform: translateX(0) translateY(0) scale(1);
+                border-radius: 60% 40% 40% 60%;
+            }
+            33% {
+                transform: translateX(80px) translateY(60px) scale(0.9);
+                border-radius: 40% 60% 60% 40%;
+            }
+            66% {
+                transform: translateX(-40px) translateY(80px) scale(1.2);
+                border-radius: 70% 30% 30% 70%;
+            }
+        }
+
+        @keyframes morph7 {
+            0%, 100% {
+                transform: translateX(0) translateY(0) scale(1) rotate(0deg);
+                border-radius: 40% 60% 60% 40%;
+            }
+            50% {
+                transform: translateX(70px) translateY(-50px) scale(1.1) rotate(180deg);
+                border-radius: 60% 40% 40% 60%;
+            }
+        }
+
+        @keyframes morph8 {
+            0%, 100% {
+                transform: translateX(0) translateY(0) scale(1);
+                border-radius: 80% 20% 60% 40%;
+            }
+            25% {
+                transform: translateX(-30px) translateY(50px) scale(0.8);
+                border-radius: 20% 80% 40% 60%;
+            }
+            75% {
+                transform: translateX(-70px) translateY(90px) scale(1.3);
+                border-radius: 60% 40% 80% 20%;
+            }
+        }
+
+        @keyframes morph9 {
+            0%, 100% {
+                transform: translateX(0) translateY(0) scale(1);
+                border-radius: 50% 50% 30% 70%;
+            }
+            50% {
+                transform: translateX(90px) translateY(-30px) scale(1.2);
+                border-radius: 30% 70% 50% 50%;
+            }
+        }
+
+        @keyframes morph10 {
+            0%, 100% {
+                transform: translateX(0) translateY(0) scale(1) rotate(0deg);
+                border-radius: 70% 30% 50% 50%;
+            }
+            33% {
+                transform: translateX(-50px) translateY(70px) scale(0.9) rotate(120deg);
+                border-radius: 50% 50% 70% 30%;
+            }
+            66% {
+                transform: translateX(80px) translateY(40px) scale(1.1) rotate(240deg);
+                border-radius: 30% 70% 50% 50%;
+            }
+        }
+
+        @keyframes morph11 {
+            0%, 100% {
+                transform: translateX(0) translateY(0) scale(1);
+                border-radius: 40% 60% 70% 30%;
+            }
+            50% {
+                transform: translateX(-80px) translateY(-60px) scale(1.3);
+                border-radius: 70% 30% 40% 60%;
+            }
+        }
+
+        @keyframes morph12 {
+            0%, 100% {
+                transform: translateX(0) translateY(0) scale(1) rotate(0deg);
+                border-radius: 60% 40% 30% 70%;
+            }
+            25% {
+                transform: translateX(60px) translateY(-40px) scale(0.8) rotate(90deg);
+                border-radius: 30% 70% 60% 40%;
+            }
+            75% {
+                transform: translateX(-30px) translateY(80px) scale(1.2) rotate(270deg);
+                border-radius: 40% 60% 70% 30%;
+            }
+        }
+
+        /* Enhanced Glassmorphism Header */
+        header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 40px);
+            max-width: 1200px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 1.5rem 3rem;
+            
+            /* Enhanced glass effect with higher transparency */
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            
+            /* Subtle blur for glass effect */
+            backdrop-filter: blur(10px) saturate(1.2);
+            -webkit-backdrop-filter: blur(10px) saturate(1.2);
+            
+            /* Multiple shadows for depth */
+            box-shadow: 
+                0 20px 60px rgba(31, 38, 135, 0.18),
+                0 10px 30px rgba(31, 38, 135, 0.12),
+                0 4px 12px rgba(0, 0, 0, 0.04),
+                inset 0 2px 4px rgba(255, 255, 255, 0.25);
+            
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover effect for glass enhancement */
+        header:hover {
+            backdrop-filter: blur(12px) saturate(1.3);
+            -webkit-backdrop-filter: blur(12px) saturate(1.3);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 
+                0 24px 70px rgba(31, 38, 135, 0.22),
+                0 12px 35px rgba(31, 38, 135, 0.15),
+                0 5px 15px rgba(0, 0, 0, 0.05),
+                inset 0 2px 6px rgba(255, 255, 255, 0.35);
+        }
+
+        /* Left brand text */
+        .brand {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+        }
+
+        .brand .name {
+            color: #000;
+        }
+
+        .brand .tagline {
+            background: linear-gradient(to right, #1930d8, #8c16e3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Ensure consistent size & thickness for all header text */
+        .brand span,
+        nav a {
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+
+        /* New left container (logo + brand) */
+        .left {
+            display: flex;
+            align-items: flex-end;
+            gap: 1.5rem;
+        }
+
+        /* Logo */
+        .logo img {
+            height: 6rem;
+            width: auto;
+            display: block;
+        }
+
+        /* Right navigation */
+        nav {
+            display: flex;
+            align-items: flex-end;
+            gap: 3rem;
+        }
+
+        nav a {
+            font-size: 1.5rem;
+            color: #000;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Jobs Section */
+        .jobs-section {
+            margin-top: 160px;
+            padding: 40px 20px;
+        }
+
+        .jobs-container {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        /* Enhanced glassmorphism job cards */
+        .job-card {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            box-shadow: 
+                0 16px 48px rgba(31, 38, 135, 0.15),
+                0 6px 20px rgba(31, 38, 135, 0.1),
+                0 2px 8px rgba(0, 0, 0, 0.04),
+                inset 0 1px 2px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px) saturate(1.2);
+            -webkit-backdrop-filter: blur(8px) saturate(1.2);
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 280px;
+            transition: all 0.3s ease;
+        }
+
+
+
+        .job-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        .job-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            padding: 6px 14px;
+            background: rgba(25, 48, 216, 0.08);
+            border: 1px solid rgba(25, 48, 216, 0.2);
+            border-radius: 24px;
+            font-size: 0.9rem;
+            color: #1930d8;
+            backdrop-filter: blur(10px);
+        }
+
+        .job-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .salary {
+            font-size: 0.9rem;
+            font-weight: 500;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .location {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .apply-btn {
+            width: 100%;
+            padding: 12px 24px;
+            background: rgba(140, 22, 227, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 24px;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            margin-top: auto;
+            backdrop-filter: blur(10px) saturate(1.2);
+            -webkit-backdrop-filter: blur(10px) saturate(1.2);
+            box-shadow: 
+                0 12px 32px rgba(140, 22, 227, 0.4),
+                0 4px 16px rgba(140, 22, 227, 0.25),
+                0 2px 8px rgba(0, 0, 0, 0.04),
+                inset 0 1px 2px rgba(255, 255, 255, 0.25);
+            transition: all 0.3s ease;
+        }
+
+
+
+        @media (max-width: 768px) {
+            .jobs-container {
+                grid-template-columns: 1fr;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Animated Morphing Gradients Background -->
+    <div class="gradient-bg">
+        <div class="gradient-blob"></div>
+        <div class="gradient-blob"></div>
+        <div class="gradient-blob"></div>
+        <div class="gradient-blob"></div>
+        <div class="gradient-blob"></div>
+        <div class="gradient-blob"></div>
+        <div class="gradient-blob"></div>
+        <div class="gradient-blob"></div>
+        <div class="gradient-blob"></div>
+        <div class="gradient-blob"></div>
+        <div class="gradient-blob"></div>
+        <div class="gradient-blob"></div>
+    </div>
+
+    <header>
+        <div class="left">
+            <div class="logo">
+                <img src="logo.png" alt="luxsearch logo">
+            </div>
+            <div class="brand">
+                <span class="name">luxsearch®</span>
+                <span class="tagline">lux is searching you.</span>
+            </div>
+        </div>
+        <nav>
+            <a href="#about">About Us</a>
+            <a href="#career">New Career</a>
+            <a href="#hire">Hire Talent</a>
+        </nav>
+    </header>
+
+    <section class="jobs-section">
+        <div class="jobs-container">
+            <div class="job-card">
+                <h3 class="job-title">Full Stack AI Developer</h3>
+                <div class="job-tags">
+                    <span class="tag">German</span>
+                    <span class="tag">AI</span>
+                    <span class="tag">TypeScript</span>
+                </div>
+                <div class="job-details">
+                    <span class="salary">80k - 90k EUR</span>
+                    <span class="location">Luxembourg City</span>
+                </div>
+                <button class="apply-btn">Apply</button>
+            </div>
+
+            <div class="job-card">
+                <h3 class="job-title">Senior DevOps Engineer</h3>
+                <div class="job-tags">
+                    <span class="tag">Kubernetes</span>
+                    <span class="tag">AWS</span>
+                    <span class="tag">Python</span>
+                </div>
+                <div class="job-details">
+                    <span class="salary">85k - 100k EUR</span>
+                    <span class="location">Luxembourg South</span>
+                </div>
+                <button class="apply-btn">Apply</button>
+            </div>
+
+            <div class="job-card">
+                <h3 class="job-title">Data Science Lead</h3>
+                <div class="job-tags">
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">SQL</span>
+                </div>
+                <div class="job-details">
+                    <span class="salary">95k - 115k EUR</span>
+                    <span class="location">Luxembourg North</span>
+                </div>
+                <button class="apply-btn">Apply</button>
+            </div>
+
+            <div class="job-card">
+                <h3 class="job-title">Cloud Architect</h3>
+                <div class="job-tags">
+                    <span class="tag">Azure</span>
+                    <span class="tag">Terraform</span>
+                    <span class="tag">Security</span>
+                </div>
+                <div class="job-details">
+                    <span class="salary">90k - 110k EUR</span>
+                    <span class="location">Luxembourg City</span>
+                </div>
+                <button class="apply-btn">Apply</button>
+            </div>
+
+            <div class="job-card">
+                <h3 class="job-title">Frontend React Developer</h3>
+                <div class="job-tags">
+                    <span class="tag">React</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">GraphQL</span>
+                </div>
+                <div class="job-details">
+                    <span class="salary">70k - 85k EUR</span>
+                    <span class="location">Luxembourg South</span>
+                </div>
+                <button class="apply-btn">Apply</button>
+            </div>
+
+            <div class="job-card">
+                <h3 class="job-title">Blockchain Developer</h3>
+                <div class="job-tags">
+                    <span class="tag">Solidity</span>
+                    <span class="tag">Web3</span>
+                    <span class="tag">Node.js</span>
+                </div>
+                <div class="job-details">
+                    <span class="salary">85k - 105k EUR</span>
+                    <span class="location">Luxembourg North</span>
+                </div>
+                <button class="apply-btn">Apply</button>
+            </div>
+
+            <div class="job-card">
+                <h3 class="job-title">Backend Java Engineer</h3>
+                <div class="job-tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">Spring Boot</span>
+                    <span class="tag">Microservices</span>
+                </div>
+                <div class="job-details">
+                    <span class="salary">75k - 90k EUR</span>
+                    <span class="location">Luxembourg City</span>
+                </div>
+                <button class="apply-btn">Apply</button>
+            </div>
+
+            <div class="job-card">
+                <h3 class="job-title">Mobile App Developer</h3>
+                <div class="job-tags">
+                    <span class="tag">Flutter</span>
+                    <span class="tag">iOS</span>
+                    <span class="tag">Android</span>
+                </div>
+                <div class="job-details">
+                    <span class="salary">70k - 85k EUR</span>
+                    <span class="location">Luxembourg South</span>
+                </div>
+                <button class="apply-btn">Apply</button>
+            </div>
+
+            <div class="job-card">
+                <h3 class="job-title">Security Engineer</h3>
+                <div class="job-tags">
+                    <span class="tag">Penetration Testing</span>
+                    <span class="tag">SIEM</span>
+                    <span class="tag">Python</span>
+                </div>
+                <div class="job-details">
+                    <span class="salary">80k - 95k EUR</span>
+                    <span class="location">Luxembourg North</span>
+                </div>
+                <button class="apply-btn">Apply</button>
+            </div>
+
+            <div class="job-card">
+                <h3 class="job-title">ML Operations Engineer</h3>
+                <div class="job-tags">
+                    <span class="tag">MLOps</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">TensorFlow</span>
+                </div>
+                <div class="job-details">
+                    <span class="salary">85k - 100k EUR</span>
+                    <span class="location">Luxembourg City</span>
+                </div>
+                <button class="apply-btn">Apply</button>
+            </div>
+
+            <div class="job-card">
+                <h3 class="job-title">QA Automation Lead</h3>
+                <div class="job-tags">
+                    <span class="tag">Selenium</span>
+                    <span class="tag">Cypress</span>
+                    <span class="tag">CI/CD</span>
+                </div>
+                <div class="job-details">
+                    <span class="salary">75k - 90k EUR</span>
+                    <span class="location">Luxembourg South</span>
+                </div>
+                <button class="apply-btn">Apply</button>
+            </div>
+
+            <div class="job-card">
+                <h3 class="job-title">Platform Engineer</h3>
+                <div class="job-tags">
+                    <span class="tag">Kubernetes</span>∑
+                    <span class="tag">GitOps</span>
+                    <span class="tag">Go</span>
+                </div>
+                <div class="job-details">
+                    <span class="salary">80k - 95k EUR</span>
+                    <span class="location">Luxembourg North</span>
+                </div>
+                <button class="apply-btn">Apply</button>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
