@@ -1,0 +1,693 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>luxsearch - lux is searching you</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+            min-height: 100vh;
+            padding-top: 400px;
+            overflow-x: hidden;
+        }
+
+        /* 2026 Floating Glass Pill Header */
+        .site-header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 1200px;
+            width: calc(100% - 40px);
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            box-shadow: 
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                0 8px 32px rgba(0, 0, 0, 0.1),
+                0 1px 0 rgba(255, 255, 255, 0.05);
+            z-index: 1000;
+            padding: 96px 128px;
+            transition: all 0.3s ease;
+        }
+
+        .site-header:hover {
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 
+                inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                0 12px 48px rgba(0, 0, 0, 0.15),
+                0 1px 0 rgba(255, 255, 255, 0.08);
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            width: 100%;
+        }
+
+        .header-left {
+            position: absolute;
+            left: 25%;
+            transform: translateX(-50%);
+            font-size: 32px;
+            font-weight: 400;
+            letter-spacing: -0.3px;
+            line-height: 1.1;
+            white-space: nowrap;
+        }
+
+        .brand-name {
+            color: #1a1a1a;
+        }
+
+        .brand-slogan {
+            background: linear-gradient(135deg, #8c16e3 0%, #1930d8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .header-logo img {
+            width: 96px;
+            height: 96px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 255, 0.1));
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: baseline;
+            gap: 48px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            left: 75%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: rgba(26, 26, 26, 0.8);
+            font-weight: 400;
+            font-size: 28px;
+            padding: 8px 24px;
+            border-radius: 12px;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            line-height: 1.1;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            color: #1a1a1a;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                0 2px 8px rgba(0, 0, 0, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(102, 51, 255, 0.1));
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: xor;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-link:hover::before {
+            opacity: 1;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .header {
+            display: inline-flex;
+            align-items: flex-end;
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 24px rgba(0, 0, 255, 0.1));
+        }
+
+        .title {
+            font-size: 48px;
+            font-weight: 300;
+            letter-spacing: -1px;
+            color: #1a1a1a;
+        }
+
+        .slogan {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            background: linear-gradient(135deg, #8c16e3 0%, #1930d8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 8s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .site-header {
+                width: calc(100% - 20px);
+                padding: 80px 96px;
+                top: 15px;
+                border-radius: 14px;
+            }
+
+            .nav-menu {
+                gap: 32px;
+                white-space: nowrap;
+            }
+
+            .nav-link {
+                font-size: 32px;
+                font-weight: 400;
+                padding: 8px 16px;
+                white-space: nowrap;
+            }
+
+            .header-left {
+                font-size: 28px;
+                font-weight: 400;
+                left: 25%;
+                transform: translateX(-50%);
+                white-space: nowrap;
+            }
+
+            .nav-menu {
+                left: 75%;
+                transform: translateX(-50%);
+            }
+
+            .header-logo img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .site-header {
+                width: calc(100% - 16px);
+                padding: 64px 80px;
+                top: 12px;
+                border-radius: 12px;
+            }
+
+            .nav-menu {
+                gap: 24px;
+                white-space: nowrap;
+            }
+
+            .nav-link {
+                font-size: 28px;
+                font-weight: 400;
+                padding: 6px 12px;
+                white-space: nowrap;
+            }
+
+            .header-left {
+                font-size: 28px;
+                font-weight: 400;
+                left: 25%;
+                transform: translateX(-50%);
+                white-space: nowrap;
+            }
+
+            .nav-menu {
+                left: 75%;
+                transform: translateX(-50%);
+            }
+
+            .header-logo img {
+                width: 64px;
+                height: 64px;
+            }
+        }
+
+        /* 2026 Ultra-Modern Job Cards */
+        .jobs-hero {
+            text-align: center;
+            padding: 60px 20px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .jobs-hero h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .jobs-hero p {
+            font-size: 18px;
+            color: rgba(26, 26, 26, 0.6);
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        .jobs-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
+
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .job-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 28px;
+            position: relative;
+            transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .job-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border-radius: 24px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .job-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .job-card:hover::before {
+            opacity: 1;
+        }
+
+        .job-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .company-logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #8c16e3 0%, #1930d8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 20px;
+            box-shadow: 0 8px 24px rgba(140, 22, 227, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .company-logo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .job-card:hover .company-logo::after {
+            transform: translateX(100%);
+        }
+
+        .job-info h3 {
+            font-size: 20px;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+
+        .company-name {
+            font-size: 15px;
+            color: rgba(26, 26, 26, 0.6);
+            font-weight: 400;
+        }
+
+        .job-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .job-tag {
+            padding: 6px 12px;
+            background: rgba(140, 22, 227, 0.1);
+            border: 1px solid rgba(140, 22, 227, 0.2);
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #8c16e3;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .job-description {
+            font-size: 15px;
+            line-height: 1.5;
+            color: rgba(26, 26, 26, 0.7);
+            margin-bottom: 24px;
+        }
+
+        .job-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .salary-badge {
+            background: rgba(140, 22, 227, 0.1);
+            border: 1px solid rgba(140, 22, 227, 0.2);
+            padding: 8px 16px;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 14px;
+            color: #8c16e3;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .apply-btn {
+            background: linear-gradient(135deg, #8c16e3 0%, #1930d8 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 14px;
+            font-weight: 500;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 4px 16px rgba(140, 22, 227, 0.3);
+        }
+
+        .apply-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(140, 22, 227, 0.4);
+        }
+
+        .apply-btn:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .jobs-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .job-card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-left">
+                <span class="brand-name">luxsearch</span> <span class="brand-slogan">lux is searching you.</span>
+            </div>
+            <div class="header-logo">
+                <img src="logo.png" alt="Luxsearch Logo">
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#careers" class="nav-link">New Career</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#hire" class="nav-link">Hire Talent</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Jobs Hero Section -->
+    <section class="jobs-hero">
+        <h1>Premium Career Opportunities</h1>
+        <p>Discover hand-picked positions from industry leaders who value exceptional talent</p>
+    </section>
+
+    <!-- Ultra-Modern Job Cards -->
+    <section class="jobs-container">
+        <div class="jobs-grid">
+            
+            <!-- Job Card 1 -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div class="company-logo">A</div>
+                    <div class="job-info">
+                        <h3>Senior Product Designer</h3>
+                        <div class="company-name">Apple</div>
+                    </div>
+                </div>
+                <div class="job-tags">
+                    <span class="job-tag">Remote</span>
+                    <span class="job-tag">Full-time</span>
+                    <span class="job-tag">Senior</span>
+                </div>
+                <div class="job-description">
+                    Lead innovative design initiatives for next-generation products. Shape user experiences that delight millions of customers worldwide.
+                </div>
+                <div class="job-footer">
+                    <div class="salary-badge">€120k - €180k</div>
+                    <button class="apply-btn">Apply Now</button>
+                </div>
+            </div>
+
+            <!-- Job Card 2 -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div class="company-logo">G</div>
+                    <div class="job-info">
+                        <h3>Staff Software Engineer</h3>
+                        <div class="company-name">Google</div>
+                    </div>
+                </div>
+                <div class="job-tags">
+                    <span class="job-tag">Hybrid</span>
+                    <span class="job-tag">Full-time</span>
+                    <span class="job-tag">Staff</span>
+                </div>
+                <div class="job-description">
+                    Build scalable systems that serve billions of users. Work with cutting-edge technology and drive technical excellence.
+                </div>
+                <div class="job-footer">
+                    <div class="salary-badge">€140k - €200k</div>
+                    <button class="apply-btn">Apply Now</button>
+                </div>
+            </div>
+
+            <!-- Job Card 3 -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div class="company-logo">M</div>
+                    <div class="job-info">
+                        <h3>Principal Data Scientist</h3>
+                        <div class="company-name">Meta</div>
+                    </div>
+                </div>
+                <div class="job-tags">
+                    <span class="job-tag">Remote</span>
+                    <span class="job-tag">Full-time</span>
+                    <span class="job-tag">Principal</span>
+                </div>
+                <div class="job-description">
+                    Drive AI/ML initiatives that shape the future of social technology. Lead research that impacts billions of users globally.
+                </div>
+                <div class="job-footer">
+                    <div class="salary-badge">€150k - €220k</div>
+                    <button class="apply-btn">Apply Now</button>
+                </div>
+            </div>
+
+            <!-- Job Card 4 -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div class="company-logo">T</div>
+                    <div class="job-info">
+                        <h3>Head of Engineering</h3>
+                        <div class="company-name">Tesla</div>
+                    </div>
+                </div>
+                <div class="job-tags">
+                    <span class="job-tag">On-site</span>
+                    <span class="job-tag">Full-time</span>
+                    <span class="job-tag">Executive</span>
+                </div>
+                <div class="job-description">
+                    Lead engineering teams building sustainable transportation. Shape the future of automotive technology and clean energy.
+                </div>
+                <div class="job-footer">
+                    <div class="salary-badge">€180k - €280k</div>
+                    <button class="apply-btn">Apply Now</button>
+                </div>
+            </div>
+
+            <!-- Job Card 5 -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div class="company-logo">N</div>
+                    <div class="job-info">
+                        <h3>Senior UX Researcher</h3>
+                        <div class="company-name">Netflix</div>
+                    </div>
+                </div>
+                <div class="job-tags">
+                    <span class="job-tag">Remote</span>
+                    <span class="job-tag">Full-time</span>
+                    <span class="job-tag">Senior</span>
+                </div>
+                <div class="job-description">
+                    Uncover insights that drive product decisions for global entertainment experiences. Shape how people discover and enjoy content.
+                </div>
+                <div class="job-footer">
+                    <div class="salary-badge">€100k - €150k</div>
+                    <button class="apply-btn">Apply Now</button>
+                </div>
+            </div>
+
+            <!-- Job Card 6 -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div class="company-logo">S</div>
+                    <div class="job-info">
+                        <h3>Cloud Solutions Architect</h3>
+                        <div class="company-name">Spotify</div>
+                    </div>
+                </div>
+                <div class="job-tags">
+                    <span class="job-tag">Hybrid</span>
+                    <span class="job-tag">Full-time</span>
+                    <span class="job-tag">Senior</span>
+                </div>
+                <div class="job-description">
+                    Design scalable cloud infrastructure for music streaming at global scale. Optimize performance for millions of daily listeners.
+                </div>
+                <div class="job-footer">
+                    <div class="salary-badge">€110k - €160k</div>
+                    <button class="apply-btn">Apply Now</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+
+</html>
