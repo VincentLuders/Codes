@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tab Manager</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 10px; }
+        .tab-list { display: flex; }
+        .tab-column { flex: 1; margin: 5px; }
+        .tab-column h3 { text-align: center; }
+        .tab-item { cursor: pointer; padding: 5px; border: 1px solid #ccc; margin-bottom: 5px; }
+        .tab-item:hover { background-color: #f0f0f0; }
+    </style>
+</head>
+<body>
+    <div class="tab-list">
+        <div class="tab-column" id="foreground-tabs">
+            <h3>Active Tabs</h3>
+            <!-- Foreground tabs will be listed here -->
+        </div>
+        <div class="tab-column" id="background-tabs">
+            <h3>Background Tabs</h3>
+            <!-- Background tabs will be listed here -->
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

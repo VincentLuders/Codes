@@ -1,0 +1,11 @@
+﻿/* Apply font ONLY to common text elements */
+p, h1, h2, h3, h4, h5, h6, a, li, td, th, label, input, textarea, 
+blockquote, cite, strong, em, b {
+  font-family: "SF Pro", "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+  
+/* Apply to text containers but be more selective - exclude the specific Google UI classes */
+div:not(:empty):not([class*="icon"]):not([class*="fa"]):not([class*="material"]):not([aria-hidden="true"]):not([class*="VfPpkd"]):not([class*="VYBDae"]):not([class*="quRWN"]):not([class*="OiePBf"]):not([class*="RBHQF"]):not([class*="T0OZEe"]),
+span:not(:empty):not([class*="icon"]):not([class*="fa"]):not([class*="material"]):not([aria-hidden="true"]):not([class*="VfPpkd"]):not([class*="VYBDae"]):not([class*="quRWN"]):not([class*="OiePBf"]):not([class*="RBHQF"]):not([class*="T0OZEe"]) {
+  font-family: "SF Pro", "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif !important;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ARC Tab Navigator</title>
+  <style>
+    body {
+      width: 300px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      padding: 10px;
+    }
+    h2 {
+      color: #333;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .shortcut {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .key {
+      background-color: #f1f1f1;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      padding: 2px 5px;
+      font-family: monospace;
+      margin-right: 10px;
+      font-weight: bold;
+      min-width: 20px;
+      text-align: center;
+    }
+    .description {
+      flex: 1;
+    }
+    .status {
+      margin-top: 15px;
+      padding: 8px;
+      background-color: #f8f8f8;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+    .position {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>ARC Tab Navigator</h2>
+  <div class="shortcut">
+    <div class="key">R</div>
+    <div class="description">Next tab (right)</div>
+  </div>
+  <div class="shortcut">
+    <div class="key">W</div>
+    <div class="description">Previous tab (left)</div>
+  </div>
+  
+  <div class="status">
+    Current position: <span class="position" id="tabPosition">Loading...</span>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

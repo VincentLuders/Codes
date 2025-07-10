@@ -1,0 +1,42 @@
+/* Ultra-safe global font change - only targets actual text content */
+
+/* Only change font for elements that are definitely text */
+p, article, section > div,
+h1:not([class*="icon"]), 
+h2:not([class*="icon"]), 
+h3:not([class*="icon"]), 
+h4:not([class*="icon"]), 
+h5:not([class*="icon"]), 
+h6:not([class*="icon"]),
+/* Form elements */
+input[type="text"],
+input[type="email"],
+input[type="search"],
+textarea,
+/* Content areas */
+.content,
+.text,
+.message,
+.comment,
+.description,
+.body-text,
+[class*="text-"]:not([class*="icon"]),
+[class*="content-"]:not([class*="icon"]) {
+    font-family: "SF Pro", "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* Never ever touch these */
+i, svg, img, button,
+[class*="icon"],
+[class*="Icon"],
+[class*="symbol"],
+[class*="Symbol"],
+[class*="glyph"],
+[role="img"],
+[aria-hidden="true"],
+[data-icon],
+.material-icons,
+.material-symbols,
+.google-symbols {
+    font-family: inherit !important;
+} 

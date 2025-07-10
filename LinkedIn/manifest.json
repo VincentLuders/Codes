@@ -1,0 +1,24 @@
+﻿{
+    "manifest_version": 3,
+    "name": "LinkedIn Profile Downloader",
+    "version": "1.0",
+    "permissions": ["activeTab", "downloads", "scripting"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.linkedin.com/in/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "commands": {
+      "download_profile": {
+        "suggested_key": {
+          "default": "Ctrl+G",
+          "mac": "Command+G"
+        },
+        "description": "Download LinkedIn Profile as PDF"
+      }
+    }
+  }

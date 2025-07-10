@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Manager Pro",
+  "version": "1.0",
+  "description": "Manage tabs across windows with custom shortcuts",
+  "permissions": [
+    "tabs",
+    "storage",
+    "commands",
+    "contextMenus",
+    "webNavigation"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_page": "options/options.html",
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+M"
+      },
+      "description": "Open Tab Manager"
+    },
+    "detach_tab": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+D"
+      },
+      "description": "Detach current tab to background"
+    },
+    "move_to_background": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+B"
+      },
+      "description": "Move current tab to background"
+    },
+    "bring_to_foreground": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F"
+      },
+      "description": "Bring background tab to foreground"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

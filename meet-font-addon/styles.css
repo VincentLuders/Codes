@@ -1,0 +1,19 @@
+/* SF Pro Font for Google Meet - Default Styles */
+/* This CSS file is loaded by default when the extension is active */
+
+/* Note: The actual font application is handled by the content script */
+/* This file exists to satisfy the manifest requirements */
+
+/* Preserve icon fonts - be very specific */
+.google-symbols,
+.material-icons,
+[class*="material-icons"],
+[class*="google-symbols"],
+i[class*="google-symbols"],
+i[class*="material"],
+i.google-symbols,
+.quRWN-Bz112c,
+[class*="quRWN"],
+[class*="VfPpkd-kBDsod"] {
+    font-family: inherit !important;
+} 

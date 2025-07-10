@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "uBlock Origin",
+  "version": "1.54.0",
+  "description": "An efficient blocker for Chromium-based browsers. Fast, lean, and unencumbered by unnecessary features.",
+  "permissions": [
+    "webRequest",
+    "webRequestFilter",
+    "webRequestBlocking",
+    "storage",
+    "tabs",
+    "unlimitedStorage",
+    "webNavigation",
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "declarativeNetRequestWithHostAccess",
+    "declarativeNetRequestModifyHeaders",
+    "declarativeNetRequestRegex"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["web_accessible_resources/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "16": "img/icon16.png",
+    "32": "img/icon32.png",
+    "48": "img/icon48.png",
+    "128": "img/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "uBlock Origin"
+  },
+  "options_page": "options.html",
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "uBlock Origin"
+  }
+} 

@@ -1,0 +1,554 @@
+/* Base Styles */
+:root {
+    --primary-color: #6200ee;
+    --primary-dark: #3700b3;
+    --primary-light: #bb86fc;
+    --secondary-color: #03dac6;
+    --error-color: #cf6679;
+    --background: #121212;
+    --surface: #1e1e1e;
+    --on-primary: #ffffff;
+    --on-secondary: #000000;
+    --on-background: #e0e0e0;
+    --on-surface: #e0e0e0;
+    --border-radius: 12px;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    --transition: all 0.3s ease;
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Light mode overrides */
+body.light-mode {
+    --background: #f5f5f5;
+    --surface: #ffffff;
+    --on-background: #121212;
+    --on-surface: #121212;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background);
+    color: var(--on-background);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    user-select: none;
+}
+
+/* App Container */
+.app-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--surface);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+/* App Header */
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+    -webkit-app-region: drag;
+}
+
+.app-header h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.drag-handle {
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-app-region: drag;
+    z-index: 1;
+}
+
+.window-controls {
+    display: flex;
+    -webkit-app-region: no-drag;
+    z-index: 2;
+}
+
+.window-btn {
+    border: none;
+    background: none;
+    color: var(--on-primary);
+    font-size: 1.25rem;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.window-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#close-btn:hover {
+    background-color: var(--error-color);
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+/* Visualization Container */
+.visualization-container {
+    position: relative;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+#audio-visualization {
+    width: 100%;
+    height: 100%;
+}
+
+.record-btn-container {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.record-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+    border: none;
+    display:
+
+// App State
+let isRecording = false;
+let transcription = '';
+let animationFrameId = null;
+let audioLevels = Array(100).fill(0);
+let config = {};
+
+// Initialize app
+init();
+
+async function init() {
+    // Set canvas size
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    
+    // Load config
+    await loadConfig();
+    
+    // Apply settings to UI
+    applySettings();
+    
+    // Load audio devices
+    await loadAudioDevices();
+    
+    // Draw initial visualization
+    drawVisualization();
+}
+
+function resizeCanvas() {
+    canvas.width = canvas.parentElement.offsetWidth;
+    canvas.height = canvas.parentElement.offsetHeight;
+}
+
+async function loadConfig() {
+    try {
+        const response = await fetch('/api/config');
+        config = await response.json();
+        
+        // Fill settings fields with config values
+        openaiKey.value = config?.api?.openai_key || '';
+        elevenlabsKey.value = config?.api?.elevenlabs_key || '';
+        providerSelect.value = config?.api?.preferred_provider || 'openai';
+        languageSelect.value = config?.transcription?.language || 'auto-detect';
+        soundFeedback.checked = config?.sound?.feedback_enabled !== false;
+        soundVolume.value = (config?.sound?.feedback_volume || 0.7) * 100;
+        darkMode.checked = config?.ui?.dark_mode !== false;
+        accentColor.value = config?.ui?.accent_color || '#6200ee';
+    } catch (error) {
+        console.error('Error loading config:', error);
+    }
+}
+
+function applySettings() {
+    // Apply dark/light mode
+    if (config?.ui?.dark_mode === false) {
+        document.body.classList.add('light-mode');
+    } else {
+        document.body.classList.remove('light-mode');
+    }
+    
+    // Apply accent color
+    document.documentElement.style.setProperty('--primary-color', config?.ui?.accent_color || '#6200ee');
+    
+    // Compute darker shade for hover states
+    const hexToRgb = (hex) => {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? {
+            r: parseInt(result[1], 16),
+            g: parseInt(result[2], 16),
+            b: parseInt(result[3], 16)
+        } : null;
+    };
+    
+    const darkenColor = (color, amount) => {
+        const rgb = hexToRgb(color);
+        if (!rgb) return color;
+        
+        return `#${Math.max(0, Math.round(rgb.r * amount)).toString(16).padStart(2, '0')}${
+            Math.max(0, Math.round(rgb.g * amount)).toString(16).padStart(2, '0')}${
+            Math.max(0, Math.round(rgb.b * amount)).toString(16).padStart(2, '0')}`;
+    };
+    
+    const darkAccent = darkenColor(config?.ui?.accent_color || '#6200ee', 0.7);
+    document.documentElement.style.setProperty('--primary-dark', darkAccent);
+}
+
+async function loadAudioDevices() {
+    try {
+        const response = await fetch('/api/audio/devices');
+        const devices = await response.json();
+        
+        // Clear previous options
+        inputDevice.innerHTML = '';
+        
+        // Add devices to select
+        devices.forEach(device => {
+            const option = document.createElement('option');
+            option.value = device.index;
+            option.textContent = device.name;
+            inputDevice.appendChild(option);
+        });
+        
+        // Set selected device from config
+        if (config?.audio?.input_device_index !== null) {
+            inputDevice.value = config.audio.input_device_index;
+        }
+    } catch (error) {
+        console.error('Error loading audio devices:', error);
+    }
+}
+
+// Audio Visualization
+function drawVisualization() {
+    // Clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // Set up drawing styles
+    const barWidth = canvas.width / audioLevels.length;
+    const baseHeight = canvas.height / 2;
+    const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim();
+    
+    // Draw bars
+    ctx.fillStyle = primaryColor;
+    
+    for (let i = 0; i < audioLevels.length; i++) {
+        const barHeight = isRecording ? audioLevels[i] * baseHeight : 2;
+        
+        // Draw bar
+        ctx.beginPath();
+        ctx.roundRect(
+            i * barWidth, 
+            baseHeight - barHeight / 2, 
+            barWidth - 1, 
+            barHeight, 
+            [2]
+        );
+        ctx.fill();
+    }
+    
+    // Gradient overlay
+    const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+    gradient.addColorStop(0, 'rgba(0, 0, 0, 0.5)');
+    gradient.addColorStop(0.5, 'rgba(0, 0, 0, 0)');
+    gradient.addColorStop(1, 'rgba(0, 0, 0, 0.5)');
+    
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    // Continue animation
+    animationFrameId = requestAnimationFrame(drawVisualization);
+}
+
+async function updateAudioLevel() {
+    if (!isRecording) return;
+    
+    try {
+        const response = await fetch('/api/audio/level');
+        const data = await response.json();
+        
+        // Shift array and add new level
+        audioLevels.shift();
+        
+        // Add some randomness to visualization for smoother effect
+        const randomVariance = Math.random() * 0.1;
+        const level = data.level + randomVariance;
+        audioLevels.push(Math.min(1, level * 2));
+        
+        // Schedule next update
+        setTimeout(updateAudioLevel, 50);
+    } catch (error) {
+        console.error('Error getting audio level:', error);
+        
+        // Add zero level on error
+        audioLevels.shift();
+        audioLevels.push(0);
+        
+        // Retry after delay
+        setTimeout(updateAudioLevel, 1000);
+    }
+}
+
+// Recording Controls
+async function startRecording() {
+    try {
+        const response = await fetch('/api/recording/start', { method: 'POST' });
+        if (response.ok) {
+            isRecording = true;
+            recordBtn.classList.add('recording');
+            recordingStatus.textContent = 'Recording...';
+            
+            // Start monitoring audio level
+            updateAudioLevel();
+        } else {
+            console.error('Failed to start recording');
+            alert('Failed to start recording. Please check your microphone settings.');
+        }
+    } catch (error) {
+        console.error('Error starting recording:', error);
+        alert('Error starting recording: ' + error.message);
+    }
+}
+
+async function stopRecording() {
+    try {
+        const response = await fetch('/api/recording/stop', { method: 'POST' });
+        if (response.ok) {
+            isRecording = false;
+            recordBtn.classList.remove('recording');
+            recordingStatus.textContent = 'Processing...';
+            
+            // Transcribe the audio
+            const language = languageSelect.value;
+            const provider = providerSelect.value;
+            
+            const transcribeResponse = await fetch(`/api/transcribe?language=${language}&provider=${provider}`, {
+                method: 'POST'
+            });
+            
+            if (transcribeResponse.ok) {
+                const result = await transcribeResponse.json();
+                transcription = result.text;
+                
+                // Display transcription
+                transcriptionText.innerHTML = `<p>${transcription}</p>`;
+                recordingStatus.textContent = 'Ready';
+            } else {
+                const error = await transcribeResponse.json();
+                console.error('Transcription error:', error);
+                recordingStatus.textContent = 'Transcription failed';
+                alert('Transcription failed: ' + error.error);
+            }
+        } else {
+            console.error('Failed to stop recording');
+            recordingStatus.textContent = 'Error';
+        }
+    } catch (error) {
+        console.error('Error stopping recording:', error);
+        recordingStatus.textContent = 'Error';
+        alert('Error: ' + error.message);
+    }
+}
+
+// Event Listeners
+recordBtn.addEventListener('click', () => {
+    if (isRecording) {
+        stopRecording();
+    } else {
+        startRecording();
+    }
+});
+
+copyBtn.addEventListener('click', () => {
+    if (transcription) {
+        navigator.clipboard.writeText(transcription)
+            .then(() => {
+                copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => {
+                    copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+                }, 2000);
+            })
+            .catch(err => {
+                console.error('Error copying text:', err);
+                alert('Failed to copy to clipboard');
+            });
+    }
+});
+
+clearBtn.addEventListener('click', () => {
+    transcription = '';
+    transcriptionText.innerHTML = '<p class="placeholder">Your transcription will appear here...</p>';
+});
+
+// Settings panel
+settingsBtn.addEventListener('click', () => {
+    settingsPanel.classList.add('open');
+});
+
+closeSettingsBtn.addEventListener('click', () => {
+    settingsPanel.classList.remove('open');
+});
+
+saveSettingsBtn.addEventListener('click', async () => {
+    // Collect settings
+    const newConfig = {
+        api: {
+            openai_key: openaiKey.value,
+            elevenlabs_key: elevenlabsKey.value,
+            preferred_provider: providerSelect.value
+        },
+        audio: {
+            input_device_index: parseInt(inputDevice.value)
+        },
+        transcription: {
+            language: languageSelect.value
+        },
+        sound: {
+            feedback_enabled: soundFeedback.checked,
+            feedback_volume: soundVolume.value / 100
+        },
+        ui: {
+            dark_mode: darkMode.checked,
+            accent_color: accentColor.value
+        }
+    };
+    
+    try {
+        const response = await fetch('/api/config', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newConfig)
+        });
+        
+        if (response.ok) {
+            // Update local config
+            config = newConfig;
+            
+            // Apply settings
+            applySettings();
+            
+            // Close panel
+            settingsPanel.classList.remove('open');
+            
+            // Show success indicator
+            saveSettingsBtn.textContent = 'Saved!';
+            setTimeout(() => {
+                saveSettingsBtn.textContent = 'Save Settings';
+            }, 2000);
+        } else {
+            alert('Failed to save settings');
+        }
+    } catch (error) {
+        console.error('Error saving settings:', error);
+        alert('Error: ' + error.message);
+    }
+});
+
+// Dark mode toggle
+darkMode.addEventListener('change', () => {
+    if (darkMode.checked) {
+        document.body.classList.remove('light-mode');
+    } else {
+        document.body.classList.add('light-mode');
+    }
+});
+
+// Accent color change
+accentColor.addEventListener('input', () => {
+    document.documentElement.style.setProperty('--primary-color', accentColor.value);
+});
+
+// Window controls
+minimizeBtn.addEventListener('click', () => {
+    fetch('/api/window/minimize', { method: 'POST' });
+});
+
+closeBtn.addEventListener('click', () => {
+    fetch('/api/window/close', { method: 'POST' });
+});
+
+// Error handling & testing functions
+window.testAPI = async (provider) => {
+    try {
+        const response = await fetch(`/api/test/${provider}`, { method: 'POST' });
+        const result = await response.json();
+        console.log(`API Test (${provider}):`, result);
+        return result;
+    } catch (error) {
+        console.error(`API Test Error (${provider}):`, error);
+        return { success: false, error: error.message };
+    }
+};
+
+window.runDiagnostics = async () => {
+    console.log('Running diagnostics...');
+    
+    // Test audio setup
+    const audioResult = await testAPI('audio');
+    console.log('Audio setup:', audioResult.success ? 'OK' : 'FAIL');
+    
+    // Test OpenAI API
+    const openaiResult = await testAPI('openai');
+    console.log('OpenAI API:', openaiResult.success ? 'OK' : 'FAIL');
+    
+    // Test ElevenLabs API
+    const elevenResult = await testAPI('elevenlabs');
+    console.log('ElevenLabs API:', elevenResult.success ? 'OK' : 'FAIL');
+    
+    return {
+        audio: audioResult,
+        openai: openaiResult,
+        elevenlabs: elevenResult
+    };
+};
+}); 

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SF Pro Font Settings</title>
+    <style>
+        body {
+            font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 32px;
+            backdrop-filter: blur(10px);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            margin: 0 0 8px 0;
+            font-weight: 600;
+        }
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+        .settings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        .setting-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 24px;
+            backdrop-filter: blur(5px);
+        }
+        .setting-card h3 {
+            margin: 0 0 16px 0;
+            font-size: 1.2rem;
+        }
+        .font-preview {
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+        .control-group {
+            margin-bottom: 16px;
+        }
+        .control-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .toggle-switch {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .toggle-switch.active {
+            background: #34a853;
+        }
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        .toggle-switch.active::after {
+            transform: translateX(30px);
+        }
+        .action-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        .btn.primary {
+            background: #1a73e8;
+            border-color: #1a73e8;
+        }
+        .btn.primary:hover {
+            background: #1557b0;
+            border-color: #1557b0;
+        }
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .status-indicator.active {
+            background: #34a853;
+        }
+        .status-indicator.inactive {
+            background: #ea4335;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>SF Pro Font for Meet</h1>
+            <p>Customize your Google Meet typography experience</p>
+        </div>
+        
+        <div class="settings-grid">
+            <div class="setting-card">
+                <h3>
+                    <span id="statusIndicator" class="status-indicator inactive"></span>
+                    Font Status
+                </h3>
+                <p id="statusText">SF Pro font is currently disabled</p>
+                <div class="control-group">
+                    <label>Enable SF Pro Font</label>
+                    <div id="fontToggle" class="toggle-switch"></div>
+                </div>
+            </div>
+            
+            <div class="setting-card">
+                <h3>Preview</h3>
+                <div class="font-preview" id="fontPreview">
+                    <h4 style="margin: 0 0 8px 0;">Meeting: Daily Standup</h4>
+                    <p style="margin: 0; opacity: 0.8;">With John, Sarah, Mike</p>
+                    <div style="margin-top: 12px; font-size: 14px;">
+                        📹 Camera • 🎤 Microphone • 🔗 Share
+                    </div>
+                </div>
+            </div>
+            
+            <div class="setting-card">
+                <h3>What This Does</h3>
+                <ul style="margin: 0; padding-left: 20px;">
+                    <li>Applies SF Pro font to Meet interface</li>
+                    <li>Preserves icon fonts and symbols</li>
+                    <li>Improves text readability</li>
+                    <li>Maintains Google Meet functionality</li>
+                </ul>
+            </div>
+            
+            <div class="setting-card">
+                <h3>Compatibility</h3>
+                <p>✅ Works with all Meet features</p>
+                <p>✅ Preserves button functionality</p>
+                <p>✅ Maintains icon display</p>
+                <p>✅ Arc browser optimized</p>
+            </div>
+        </div>
+        
+        <div class="action-buttons">
+            <button id="applyBtn" class="btn primary">Apply Font Settings</button>
+            <button id="resetBtn" class="btn">Reset to Default</button>
+            <button id="closePanelBtn" class="btn">Close Settings</button>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/meetjs/addons/1.0.0/meet-addons.js"></script>
+    <script>
+        let fontEnabled = false;
+        let session = null;
+        
+        async function initializeMainStage() {
+            try {
+                session = await window.meet.addon.createAddonSession({
+                    cloudProjectNumber: 'YOUR_PROJECT_NUMBER'
+                });
+                
+                // Get the state passed from side panel
+                const activityState = session.getActivityStartingState();
+                if (activityState && activityState.additionalData) {
+                    const data = JSON.parse(activityState.additionalData);
+                    fontEnabled = data.fontEnabled || false;
+                }
+                
+                updateUI();
+                setupEventListeners();
+                
+            } catch (error) {
+                console.error('Failed to initialize main stage:', error);
+            }
+        }
+        
+        function setupEventListeners() {
+            const fontToggle = document.getElementById('fontToggle');
+            const applyBtn = document.getElementById('applyBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const closePanelBtn = document.getElementById('closePanelBtn');
+            
+            fontToggle.addEventListener('click', toggleFont);
+            applyBtn.addEventListener('click', applyFontSettings);
+            resetBtn.addEventListener('click', resetSettings);
+            closePanelBtn.addEventListener('click', closeSettings);
+        }
+        
+        function toggleFont() {
+            fontEnabled = !fontEnabled;
+            updateUI();
+        }
+        
+        function updateUI() {
+            const fontToggle = document.getElementById('fontToggle');
+            const statusIndicator = document.getElementById('statusIndicator');
+            const statusText = document.getElementById('statusText');
+            const fontPreview = document.getElementById('fontPreview');
+            
+            if (fontEnabled) {
+                fontToggle.classList.add('active');
+                statusIndicator.classList.remove('inactive');
+                statusIndicator.classList.add('active');
+                statusText.textContent = 'SF Pro font is currently enabled';
+                fontPreview.style.fontFamily = '"SF Pro", "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif';
+            } else {
+                fontToggle.classList.remove('active');
+                statusIndicator.classList.remove('active');
+                statusIndicator.classList.add('inactive');
+                statusText.textContent = 'SF Pro font is currently disabled';
+                fontPreview.style.fontFamily = 'Roboto, RobotoDraft, Helvetica, Arial, sans-serif';
+            }
+        }
+        
+        async function applyFontSettings() {
+            try {
+                if (fontEnabled) {
+                    // Apply the font settings
+                    await injectFontStyles();
+                    
+                    // Notify participants
+                    if (session) {
+                        await session.broadcastStateDelta({
+                            fontEnabled: true,
+                            message: 'SF Pro font has been applied to the meeting'
+                        });
+                    }
+                } else {
+                    await removeFontStyles();
+                    
+                    if (session) {
+                        await session.broadcastStateDelta({
+                            fontEnabled: false,
+                            message: 'Font styling has been disabled'
+                        });
+                    }
+                }
+                
+                // Show success message
+                showNotification('Settings applied successfully!');
+                
+            } catch (error) {
+                console.error('Failed to apply settings:', error);
+                showNotification('Failed to apply settings. Please try again.');
+            }
+        }
+        
+        async function injectFontStyles() {
+            // In a real implementation, this would use Meet's APIs to inject styles
+            const customCSS = `
+                /* Preserve icon fonts */
+                .google-symbols,
+                .material-icons,
+                [class*="material-icons"],
+                [class*="google-symbols"],
+                i[class*="google-symbols"],
+                i[class*="material"] {
+                    font-family: inherit !important;
+                }
+                
+                /* Apply SF Pro to text elements while preserving UI */
+                p, h1, h2, h3, h4, h5, h6, a, li, td, th, label, 
+                input:not([type="button"]):not([type="submit"]),
+                textarea, blockquote, cite, strong, em, b,
+                div:not([class*="icon"]):not([class*="VfPpkd"]):not([class*="VYBDae"]):not([aria-hidden="true"]),
+                span:not([class*="icon"]):not([class*="VfPpkd"]):not([class*="VYBDae"]):not([aria-hidden="true"]) {
+                    font-family: "SF Pro", "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif !important;
+                }
+            `;
+            
+            console.log('Applying SF Pro font styles to Meet interface');
+            // This would actually inject the CSS into the Meet interface
+        }
+        
+        async function removeFontStyles() {
+            console.log('Removing custom font styles from Meet interface');
+            // This would remove the injected CSS
+        }
+        
+        async function resetSettings() {
+            fontEnabled = false;
+            updateUI();
+            await removeFontStyles();
+            showNotification('Settings reset to default');
+        }
+        
+        async function closeSettings() {
+            if (session) {
+                await session.unloadSidePanel();
+            }
+        }
+        
+        function showNotification(message) {
+            // Create a temporary notification
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: rgba(52, 168, 83, 0.9);
+                color: white;
+                padding: 12px 24px;
+                border-radius: 8px;
+                font-weight: 500;
+                backdrop-filter: blur(10px);
+                z-index: 1000;
+                animation: slideIn 0.3s ease;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+        
+        // Initialize when the page loads
+        document.addEventListener('DOMContentLoaded', initializeMainStage);
+    </script>
+    
+    <style>
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</body>
+</html> 

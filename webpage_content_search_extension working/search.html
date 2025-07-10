@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>History Content Search</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="centered-title">History Content Search</h1>
+      <button id="settings-button">Settings</button>
+    </div>
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search...">
+      <div class="sort-container">
+        <span>Sort by: </span>
+        <button id="sort-relevance">Relevance</button>
+        <button id="sort-date-newest">Date - newest</button>
+        <button id="sort-date-oldest">Date - oldest</button>
+      </div>
+    </div>
+    <div id="results-container"></div>
+  </div>
+  <script src="search.js"></script>
+</body>
+</html>

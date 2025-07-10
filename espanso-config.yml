@@ -1,0 +1,4282 @@
+{
+  "matches": 
+  [
+    #numbers 
+
+
+    { "trigger": ",c", "replace": "ç", "propagate_case": true, "blacklist": "Obsidian", },
+    { "trigger": "..c", "replace": ".c", "propagate_case": true, "exclusive": true },
+    { "trigger": ",e", "replace": "é", "propagate_case": true },
+    { "trigger": "..e", "replace": ".e", "propagate_case": true, "exclusive": true },
+    { "trigger": ".n", "replace": "ñ", "propagate_case": true },
+    { "trigger": "..n", "replace": ".n", "propagate_case": true, "exclusive": true },
+    { "trigger": ",i", "replace": "í", "propagate_case": true },
+    { "trigger": "'i", "replace": "ï", "propagate_case": true },
+    { "trigger": "..i", "replace": ".i", "propagate_case": true, "exclusive": true },
+    { "trigger": "..a", "replace": ".a", "propagate_case": true, "exclusive": true },
+    { "trigger": ",a", "replace": "á", "propagate_case": true },
+    { "trigger": ".a", "replace": "à", "propagate_case": true },
+    { "trigger": ",o", "replace": "ó", "propagate_case": true },
+    { "trigger": "..o", "replace": ".o", "propagate_case": true, "exclusive": true },
+    { "trigger": ".o", "replace": "ò", "propagate_case": true },
+    { "trigger": ",u", "replace": "ú", "propagate_case": true },
+    { "trigger": "..u", "replace": ".u", "propagate_case": true, "exclusive": true },
+    { "trigger": ".u", "replace": "ù", "propagate_case": true },
+    { "trigger": ".e", "replace": "è", "propagate_case": true },
+    { "trigger": "?i", "replace": "î", "propagate_case": true }, 
+    { "trigger": "?a", "replace": "ã", "propagate_case": true },
+    { "trigger": "?o", "replace": "õ", "propagate_case": true },
+    { "trigger": "?e", "replace": "ê", "propagate_case": true },
+    { "trigger": "q2", "replace": "ß" },
+    { "trigger": "uu", "replace": "ü", "propagate_case": true },
+    { "trigger": "o0", "replace": "ö", "propagate_case": true },
+    { "trigger": "qa", "replace": "ä", "propagate_case": true },
+    { "trigger": "sx", "replace": "ß", "propagate_case": true },
+
+
+  { "trigger": "qq", "replace": "`", "propagate_case": true },
+  
+{
+      "trigger": "ih9", 
+      "replace": "IhFGss99" 
+},
+{
+      "trigger": "c.", 
+      "replace": "ca.",
+      "propagate_case": true,
+      "word": true  
+},
+{
+      "trigger": "etc", 
+      "replace": "etc.",
+      "propagate_case": true,
+      "word": true  
+},
+{
+      "trigger": "ih1", 
+      "replace": "IhFGss1000" 
+},
+{
+      "trigger": "ih0", 
+      "replace": "IhFGss1000000" 
+},
+    {
+      "trigger": "tn", 
+      "replace": "+352 661 610 666",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ttn",
+      "replace": "+352 2060 3036",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "dd",
+      "replace": "{{mydate}}",
+      "word": true, 
+      "vars": [
+        {
+          "name": "mydate",
+          "type": "date",
+          "params": {
+            "format": "%d.%m.%y"
+          }
+        }
+      ]
+    },
+    {
+      "trigger": "yd",
+      "replace": "{{yesterday}}",
+      "word": true,
+      "vars": [
+        {
+          "name": "yesterday",
+          "type": "date",
+          "params": {
+            "format": "%d.%m.%y",
+            "offset": -86400
+          }
+        }
+      ]
+    },
+    {
+      "trigger": "tmr",
+      "replace": "{{tomorrow}}",
+      "word": true,
+      "vars": [
+        {
+          "name": "tomorrow",
+          "type": "date",
+          "params": {
+            "format": "%d.%m.%y",
+            "offset": 86400
+          }
+        }
+      ]
+    },
+  
+    {
+      "trigger": "sfs",
+      "replace": "🙃",
+      "propagate_case": true,
+      "word": true
+    },
+    {
+      "trigger": "idk",
+      "replace": "🤷",
+      "propagate_case": true,
+      "word": true
+    },
+
+    {
+      "trigger": "ht",
+      "replace": "❤️",
+      "propagate_case": true,
+      "word": true
+    },
+    {
+      "trigger": "ouc",
+      "replace": "🥴",
+      "propagate_case": true,
+      "word": true
+    },
+    { 
+      "trigger": "hh",
+      "replace": "😅",
+      "propagate_case": true,
+      "word": true
+    },
+    {
+      "trigger": "wnd",
+      "replace": "🤔",
+      "propagate_case": true,
+      "word": true
+    },
+    {
+      "trigger": "spc",
+      "replace": "🤨",
+      "propagate_case": true,
+      "word": true
+    },
+    {
+      "trigger": "hhh",
+      "replace": "😂",
+      "propagate_case": true,
+      "word": true
+    },
+    {
+      "trigger": "tth",
+      "replace": "😬",
+      "propagate_case": true,
+      "word": true
+    },
+    {
+      "trigger": "wk",
+      "replace": "😉",
+      "propagate_case": true,
+      "word": true
+    },
+    {
+      "trigger": "thb",
+      "replace": "👍🏽",
+      "propagate_case": true,
+      "word": true
+    },
+    {
+      "trigger": "fst",
+      "replace": "👊🏽️",
+      "propagate_case": true,
+      "word": true
+    },
+    {
+      "trigger": "tt",
+      "replace": "{{mytime}}",
+      "word": true, 
+      "vars": [
+        {
+          "name": "mytime",
+          "type": "date",
+          "params": {
+            "format": "%H:%M"
+          }
+        }
+      ]
+    },
+    {
+      "trigger": "tnn",
+      "replace": "+49 177 686 2857",
+      "propagate_case": true,
+      "word": true  
+    },
+    { 
+      "regex:": "greet\\d",
+      "replace": "Hello!" 
+    },
+    {
+      "trigger": "dej",
+      "replace": "Don't explain, just send me the script.",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "vll", 
+      "replace": "vincent@activesourcer.com",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "exc",
+      "replace": "LUX EXECUTIVE SEARCH LTD",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "vvl",
+      "replace": "vincent.lueders@gmail.com",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "vvv",
+      "replace": "vincent@activesourcer.com",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "vl",
+      "replace": "Vincent Lüders",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "vt",
+      "replace": "Vincent",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "sb",
+      "replace": "Saarbrücken",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "bth",
+      "replace": "28.01.2001",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "lx", 
+      "replace": "Luxembourg",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "lk", 
+      "replace": "LinkedIn",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "fu", 
+      "replace": "follow-up",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "thf",
+      "replace": "Thanks for your feedback.",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "dkr",
+      "replace": "Danke für deine Rückmeldung.",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "dkrs",
+      "replace": "Danke für Ihre Rückmeldung.",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "brt",
+      "replace": "grenzgaenger.lu/gehaltsrechner/",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ih9",
+      "replace": "IhFGss!99",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ih0",
+      "replace": "IhFGss!1000000",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ih1",
+      "replace": "IhFGss!1000",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ifw",
+      "replace": "#IfWinActive ahk_exe",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "sd",
+      "replace": "Sie",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "cicd",
+      "replace": "CI/CD",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "it ",
+      "replace": "IT",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ict",
+      "replace": "ICT",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "cdi",
+      "replace": "CDI",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "vat",
+      "replace": "VAT",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "bz",
+      "replace": "bzgl.",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "cv",
+      "replace": "CV",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "hr",
+      "replace": "HR",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "cs",
+      "replace": "candidates",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "cto",
+      "replace": "CTO",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "cio",
+      "replace": "CIO",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ceo",
+      "replace": "CEO",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ctOS",
+      "replace": "CTOs",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ciOS",
+      "replace": "CIOs",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ceOS",
+      "replace": "CEOs",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "sap",
+      "replace": "SAP",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "pp",
+      "replace": "PP",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "erp",
+      "replace": "ERP",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "gpt",
+      "replace": "GPT",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "html",
+      "replace": "HTML",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "api",
+      "replace": "API",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ai",
+      "replace": "AI",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "url",
+      "replace": "URL",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "agbs",
+      "replace": "AGBs",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "qa",
+      "replace": "QA",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "anc",
+      "replace": "ANC",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "eur",
+      "replace": "EUR",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "usd",
+      "replace": "USD",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "bachelors",
+      "replace": "Bachelor's",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "masters",
+      "replace": "Master's",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "-e",
+      "replace": "€",
+      "word": false
+    },
+    {
+      "trigger": "0e",
+      "replace": "0€",
+      "word": false
+    },
+    {
+      "trigger": "1e",
+      "replace": "1€",
+      "word": false
+    }, 
+    {
+      "trigger": "2e",
+      "replace": "2€",
+      "word": false
+    },
+    {
+      "trigger": "3e",
+      "replace": "3€",
+      "word": false
+    },
+    {
+      "trigger": "4e",
+      "replace": "4€",
+      "word": false
+    },
+    {
+      "trigger": "5e",
+      "replace": "5€",
+      "word": false
+    },
+    {
+      "trigger": "6e",
+      "replace": "6€",
+      "word": false
+    },
+    {
+      "trigger": "7e",
+      "replace": "7€",
+      "word": false
+    },
+    {
+      "trigger": "8e",
+      "replace": "8€",
+      "word": false
+    },
+    {
+      "trigger": "9e",
+      "replace": "9€",
+      "word": false
+    },
+    {
+      "trigger": "bp",
+      "replace": "bullet points",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "gm",
+      "replace": "Good morning",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "gmm",
+      "replace": "Guten Morgen",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "nd ",
+      "replace": "AND ",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "or ",
+      "replace": "OR ",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "nt ",
+      "replace": "NOT ",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "net ",
+      "replace": ".NET ",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "sql",
+      "replace": "SQL",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "tcs",
+      "replace": "T&Cs",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "php",
+      "replace": "PHP",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "vsc",
+      "replace": "VSC",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "cg",
+      "replace": "ChatGPT",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "crm",
+      "replace": "CRM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "devops",
+      "replace": "DevOps",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "secops",
+      "replace": "SecOps",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "itt",
+      "replace": "its",
+      "propagate_case": true,
+      "word": true  
+    },
+    #symbol
+    {
+      "trigger": "<<",
+      "replace": "→",
+      "word": false 
+    },
+    {
+      "trigger": ">>",
+      "replace": "←",
+      "word": false 
+    },
+    {
+      "trigger": "<>",
+      "replace": "↓",
+      "word": false 
+    },
+    {
+      "trigger": "><",
+      "replace": "↑",
+      "word": false 
+    },
+    {
+      "trigger": ",.",
+      "replace": "[[",
+      "word": false 
+    },
+    {
+      "trigger": ",,",
+      "replace": "]]",
+      "word": false 
+    },
+    #time
+    {
+      "trigger": "1a",
+      "replace": "1AM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "2a",
+      "replace": "2AM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "3a",
+      "replace": "3AM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "4a",
+      "replace": "4AM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "5a",
+      "replace": "5AM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "6a",
+      "replace": "6AM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "8a",
+      "replace": "8AM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "9a",
+      "replace": "9AM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "10a",
+      "replace": "10AM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "11a",
+      "replace": "11AM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "12p",
+      "replace": "12PM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "1p",
+      "replace": "1PM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "2p",
+      "replace": "2PM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "3p",
+      "replace": "3PM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "4p",
+      "replace": "4PM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "5p",
+      "replace": "5PM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "6p",
+      "replace": "6PM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "7p",
+      "replace": "7PM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "8p",
+      "replace": "8PM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "9p",
+      "replace": "9PM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "10p",
+      "replace": "10PM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "11p",
+      "replace": "11PM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "12a",
+      "replace": "12AM",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "etes",
+      "replace": "êtes",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ajd",
+      "replace": "aujourd'hui",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "jai",
+      "replace": "j'ai",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "pq",
+      "replace": "parce que",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "deja",
+      "replace": "déjà",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "recu",
+      "replace": "reçu",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "qc",
+      "replace": "quelque chose",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "nest",
+      "replace": "n'est",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "qil",
+      "replace": "Qu'il",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "cest",
+      "replace": "c'est",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "quon",
+      "replace": "qu'on",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "quen",
+      "replace": "qu'en",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "quils",
+      "replace": "qu'ils",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "quelles",
+      "replace": "qu'elles",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "suisje",
+      "replace": "suis-je",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "eq",
+      "replace": "est-ce que",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "eqi",
+      "replace": "est-ce qu'ils",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "eqis",
+      "replace": "est-ce qu'ils",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "eqy",
+      "replace": "est-ce qu'il y a",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "qq",
+      "replace": "qu'est-ce que",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "qqe",
+      "replace": "qu'est-ce qu'est",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "qqi",
+      "replace": "qu'est-ce qu'il",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "qqy",
+      "replace": "qu'est-ce qu'il y a",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "qquis",
+      "replace": "qu'est-ce qu'ils",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "svp",
+      "replace": "s'il vous plaît",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "dc",
+      "replace": "d'accord",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "stp",
+      "replace": "s'il te plaît",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "qn",
+      "replace": "quelqu'un",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "nai",
+      "replace": "n'ai",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "etaient",
+      "replace": "étaient",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "aimee",
+      "replace": "aimée",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "frere",
+      "replace": "frère",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "soeur",
+      "replace": "sœur",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "interet",
+      "replace": "intérêt",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "eleve",
+      "replace": "élève",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "universite",
+      "replace": "université",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "fete",
+      "replace": "fête",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "naive",
+      "replace": "naïve",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "foret",
+      "replace": "forêt",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ile",
+      "replace": "île",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "etre",
+      "replace": "être",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "vc",
+      "replace": "você",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "nao",
+      "replace": "não",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ent",
+      "replace": "então",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "gehts",
+      "replace": "geht's",
+      "propagate_case": true,
+      "word": true  
+    },
+
+    {
+          "trigger": "lett",
+          "replace": "lets",
+          "propagate_case": true,
+          "word": true  
+    },
+    {
+      "trigger": "lets",
+      "replace": "let's",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "its",
+      "replace": "it's",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "it's",
+      "replace": "its",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "well",
+      "replace": "we'll",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "wel",
+      "replace": "well",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "whats",
+      "replace": "what's",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "nm",
+      "replace": "im",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "dont",
+      "replace": "don't",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ive",
+      "replace": "I've",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "youre",
+      "replace": "you're",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "youd",
+      "replace": "you'd",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "youdve",
+      "replace": "you'd've",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "youll",
+      "replace": "you'll",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "youve",
+      "replace": "you've",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "hes",
+      "replace": "he's",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "hed",
+      "replace": "he'd",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "hedve",
+      "replace": "he'd've",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "hell",
+      "replace": "he'll",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "hel",
+      "replace": "hell",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "shes",
+      "replace": "she's",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "shed",
+      "replace": "she'd",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "shedve",
+      "replace": "she'd've",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "shell",
+      "replace": "she'll",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "itd",
+      "replace": "it'd",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "itdve",
+      "replace": "it'd've",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "itll",
+      "replace": "it'll",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "european",
+      "replace": "european",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "were",
+      "replace": "we're",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "werr",
+      "replace": "were",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "heres",
+      "replace": "here's",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "wed",
+      "replace": "we'd",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "wedve",
+      "replace": "we'd've",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "weve",
+      "replace": "we've",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "theyre",
+      "replace": "they're",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "theyd",
+      "replace": "they'd",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "theydve",
+      "replace": "they'd've",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "theyll",
+      "replace": "they'll",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "theyve",
+      "replace": "they've",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "thats",
+      "replace": "that's",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": ". thats",
+      "replace": ". that's",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "thatd",
+      "replace": "that'd",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "thatdve",
+      "replace": "that'd've",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "whos",
+      "replace": "who's",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "whod",
+      "replace": "who'd",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "whodve",
+      "replace": "who'd've",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "wholl",
+      "replace": "who'll",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "whove",
+      "replace": "who've",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "whatre",
+      "replace": "what're",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "whatd",
+      "replace": "what'd",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "whatdve",
+      "replace": "what'd've",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "whatll",
+      "replace": "what'll",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "whatve",
+      "replace": "what've",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "whens",
+      "replace": "when's",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "whend",
+      "replace": "when'd",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "whendve",
+      "replace": "when'd've",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "whenll",
+      "replace": "when'll",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "whereve",
+      "replace": "where've",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "hows",
+      "replace": "how's",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "howd",
+      "replace": "how'd",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "howdve",
+      "replace": "how'd've",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "howll",
+      "replace": "how'll",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "arent",
+      "replace": "aren't", 
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "isnt",
+      "replace": "isn't",
+      "propagate_case": true,
+      "word": true,
+      "word_separators": [" ", ",", ".", "?", "!", "\r", "\n", "\t", "'", "\"", "\x0c", "(", ")", "[", "]", "{", "}", "<", ">", ":", ";"]
+    },
+    {
+      "trigger": "i",
+      "replace": "I", 
+      "word": true
+    },
+    {
+      "trigger": "im",
+      "replace": "I'm", 
+      "word": true
+    },
+    {
+      "trigger": "id",
+      "replace": "I'd", 
+      "word": true
+    },
+    {
+      "trigger": "idd",
+      "replace": "ID", 
+      "word": true
+    },
+    {
+      "trigger": "wasnt",
+      "replace": "wasn't",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "werent",
+      "replace": "weren't",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "hasnt",
+      "replace": "hasn't",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "havent",
+      "replace": "haven't",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "hadnt",
+      "replace": "hadn't",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "doesnt",
+      "replace": "doesn't",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "didnt",
+      "replace": "didn't",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "wont",
+      "replace": "won't",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "wouldnt",
+      "replace": "wouldn't",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "shouldnt",
+      "replace": "shouldn't",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "couldnt",
+      "replace": "couldn't",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "mightnt",
+      "replace": "mightn't",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "mustnt",
+      "replace": "mustn't",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "cant",
+      "replace": "can't",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "maynt",
+      "replace": "mayn't",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "shan't",
+      "replace": "shan't",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "oughtnt",
+      "replace": "oughtn't",
+      "propagate_case": true,
+      "word": true  
+    },
+
+    {
+      "trigger": "monday",
+      "replace": "Monday",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "tuesday",
+      "replace": "Tuesday",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "wednesday",
+      "replace": "Wednesday",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "thursday",
+      "replace": "Thursday",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "friday",
+      "replace": "Friday",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "saturday",
+      "replace": "Saturday",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "sunday",
+      "replace": "Sunday",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "january",
+      "replace": "January",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "february",
+      "replace": "February",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "march",
+      "replace": "March",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "april",
+      "replace": "April",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "june",
+      "replace": "June",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "july",
+      "replace": "July",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "august",
+      "replace": "August",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "september",
+      "replace": "September",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "october",
+      "replace": "October",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "november",
+      "replace": "November",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "december",
+      "replace": "December",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "christmas",
+      "replace": "Christmas",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "thanksgiving",
+      "replace": "Thanksgiving",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "halloween",
+      "replace": "Halloween",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "independence day",
+      "replace": "Independence Day",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "easter",
+      "replace": "Easter",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "afghanistan",
+      "replace": "Afghanistan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "albania",
+      "replace": "Albania",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "algeria",
+      "replace": "Algeria",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "andorra",
+      "replace": "Andorra",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "angola",
+      "replace": "Angola",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "antigua and barbuda",
+      "replace": "Antigua and Barbuda",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "argentina",
+      "replace": "Argentina",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "armenia",
+      "replace": "Armenia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "australia",
+      "replace": "Australia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "austria",
+      "replace": "Austria",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "azerbaijan",
+      "replace": "Azerbaijan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "bahamas",
+      "replace": "Bahamas",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "bahrain",
+      "replace": "Bahrain",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "bangladesh",
+      "replace": "Bangladesh",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "bareSC172 & uos",
+      "replace": "Barbados",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "belarus",
+      "replace": "Belarus",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "belgium",
+      "replace": "Belgium",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "belize",
+      "replace": "Belize",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "benin",
+      "replace": "Benin",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "bhutan",
+      "replace": "Bhutan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "bolivia",
+      "replace": "Bolivia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "bosnia and herzegovina",
+      "replace": "Bosnia and Herzegovina",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "botswana",
+      "replace": "Botswana",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "brazil",
+      "replace": "Brazil",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "brunei",
+      "replace": "Brunei",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "bulgaria",
+      "replace": "Bulgaria",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "burkina faso",
+      "replace": "Burkina Faso",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "burundi",
+      "replace": "Burundi",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "cabo verde",
+      "replace": "Cabo Verde",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "cambodia",
+      "replace": "Cambodia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "cameroon",
+      "replace": "Cameroon",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "canada",
+      "replace": "Canada",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "central african republic",
+      "replace": "Central African Republic",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "chad",
+      "replace": "Chad",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "chile",
+      "replace": "Chile",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "china",
+      "replace": "China",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "colombia",
+      "replace": "Colombia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "comoros",
+      "replace": "Comoros",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "congo",
+      "replace": "Congo",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "costa rica",
+      "replace": "Costa Rica",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "croatia",
+      "replace": "Croatia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "cuba",
+      "replace": "Cuba",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "cyprus",
+      "replace": "Cyprus",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "czechia",
+      "replace": "Czechia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "denmark",
+      "replace": "Denmark",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "djibouti",
+      "replace": "Djibouti",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "dominica",
+      "replace": "Dominica",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "dominican republic",
+      "replace": "Dominican Republic",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ecuador",
+      "replace": "Ecuador",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "egypt",
+      "replace": "Egypt",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "el salvador",
+      "replace": "El Salvador",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "equatorial guinea",
+      "replace": "Equatorial Guinea",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "eritrea",
+      "replace": "Eritrea",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "estonia",
+      "replace": "Estonia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "eswatini",
+      "replace": "Eswatini",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ethiopia",
+      "replace": "Ethiopia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "fiji",
+      "replace": "Fiji",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "finland",
+      "replace": "Finland",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "france",
+      "replace": "France",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "gabon",
+      "replace": "Gabon",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "gambia",
+      "replace": "Gambia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "georgia",
+      "replace": "Georgia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "germany",
+      "replace": "Germany",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ghana",
+      "replace": "Ghana",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "greece",
+      "replace": "Greece",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "grenada",
+      "replace": "Grenada",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "guatemala",
+      "replace": "Guatemala",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "guinea",
+      "replace": "Guinea",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "guinea-bissau",
+      "replace": "Guinea-Bissau",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "guyana",
+      "replace": "Guyana",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "haiti",
+      "replace": "Haiti",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "honduras",
+      "replace": "Honduras",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "hungary",
+      "replace": "Hungary",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "iceland",
+      "replace": "Iceland",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "india",
+      "replace": "India",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "indonesia",
+      "replace": "Indonesia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "iran",
+      "replace": "Iran",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "iraq",
+      "replace": "Iraq",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ireland",
+      "replace": "Ireland",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "israel",
+      "replace": "Israel",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "italy",
+      "replace": "Italy",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "jamaica",
+      "replace": "Jamaica",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "japan",
+      "replace": "Japan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "jordan",
+      "replace": "Jordan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "kazakhstan",
+      "replace": "Kazakhstan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "kenya",
+      "replace": "Kenya",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "kiribati",
+      "replace": "Kiribati",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "kosovo",
+      "replace": "Kosovo",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "kuwait",
+      "replace": "Kuwait",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "kyrgyzstan",
+      "replace": "Kyrgyzstan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "laos",
+      "replace": "Laos",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "latvia",
+      "replace": "Latvia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "lebanon",
+      "replace": "Lebanon",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "lesotho",
+      "replace": "Lesotho",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "liberia",
+      "replace": "Liberia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "libya",
+      "replace": "Libya",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "liechtenstein",
+      "replace": "Liechtenstein",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "lithuania",
+      "replace": "Lithuania",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "luxembourg",
+      "replace": "Luxembourg",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "madagascar",
+      "replace": "Madagascar",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "malawi",
+      "replace": "Malawi",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "malaysia",
+      "replace": "Malaysia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "maldives",
+      "replace": "Maldives",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "mali",
+      "replace": "Mali",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "mLalta",
+      "replace": "MLalta",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "marshall islands",
+      "replace": "Marshall Islands",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "mauritania",
+      "replace": "Mauritania",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "mauritius",
+      "replace": "Mauritius",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "mexico",
+      "replace": "Mexico",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "micronesia",
+      "replace": "Micronesia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "moldova",
+      "replace": "Moldova",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "monaco",
+      "replace": "Monaco",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "mongolia",
+      "replace": "Mongolia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "montenegro",
+      "replace": "Montenegro",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "morocco",
+      "replace": "Morocco",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "mozambique",
+      "replace": "Mozambique",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "myanmar",
+      "replace": "Myanmar",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "namibia",
+      "replace": "Namibia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "nauru",
+      "replace": "Nauru",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "nepal",
+      "replace": "Nepal",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "netherlands",
+      "replace": "Netherlands",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "new zealand",
+      "replace": "New Zealand",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "nicaragua",
+      "replace": "Nicaragua",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "niger",
+      "replace": "Niger",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "nigeria",
+      "replace": "Nigeria",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "north korea",
+      "replace": "North Korea",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "north macedonia",
+      "replace": "North Macedonia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "norway",
+      "replace": "Norway",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "oman",
+      "replace": "Oman",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "pakistan",
+      "replace": "Pakistan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "palau",
+      "replace": "Palau",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "panama",
+      "replace": "Panama",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "papua new guinea",
+      "replace": "Papua New Guinea",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "paraguay",
+      "replace": "Paraguay",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "peru",
+      "replace": "Peru",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "philippines",
+      "replace": "Philippines",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "poland",
+      "replace": "Poland",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "portugal",
+      "replace": "Portugal",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "qatar",
+      "replace": "Qatar",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "romania",
+      "replace": "Romania",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "russia",
+      "replace": "Russia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "rwanda",
+      "replace": "Rwanda",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "saint kitts and nevis",
+      "replace": "Saint Kitts and Nevis",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "sain Lucia",
+      "replace": "Saint Lucia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "saint vincent and the grenadines",
+      "replace": "Saint Vincent and the Grenadines",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "samoa",
+      "replace": "Samoa",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "san marino",
+      "replace": "San Marino",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "sao tome and principe",
+      "replace": "Sao Tome and Principe",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "saudi arabia",
+      "replace": "Saudi Arabia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "senegal",
+      "replace": "Senegal",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "serbia",
+      "replace": "Serbia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "seychelles",
+      "replace": "Seychelles",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "sierra leone",
+      "replace": "Sierra Leone",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "singapore",
+      "replace": "Singapore",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "slovakia",
+      "replace": "Slovakia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "slovenia",
+      "replace": "Slovenia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "solomon islands",
+      "replace": "Solomon Islands",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "somalia",
+      "replace": "Somalia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "south africa",
+      "replace": "South Africa",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "south korea",
+      "replace": "South Korea",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "south sudan",
+      "replace": "South Sudan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "spain",
+      "replace": "Spain",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "sri lanka",
+      "replace": "Sri Lanka",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "sudan",
+      "replace": "Sudan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "suriname",
+      "replace": "Suriname",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "sweden",
+      "replace": "Sweden",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "switzerland",
+      "replace": "Switzerland",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "syria",
+      "replace": "Syria",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "taiwan",
+      "replace": "Taiwan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "tajikistan",
+      "replace": "Tajikistan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "tanzania",
+      "replace": "Tanzania",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "thailand",
+      "replace": "Thailand",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "timor-leste",
+      "replace": "Timor-Leste",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "togo",
+      "replace": "Togo",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "tonga",
+      "replace": "Tonga",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "trinidad and tobago",
+      "replace": "Trinidad and Tobago",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "tunisia",
+      "replace": "Tunisia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "turkey",
+      "replace": "Turkey",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "turkmenistan",
+      "replace": "Turkmenistan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "tuvalu",
+      "replace": "Tuvalu",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "uganda",
+      "replace": "Uganda",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ukraine",
+      "replace": "Ukraine",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "united arab emirates",
+      "replace": "United Arab Emirates",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "united kingdom",
+      "replace": "United Kingdom",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "united states of america",
+      "replace": "United States of America",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "uruguay",
+      "replace": "Uruguay",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "uzbekistan",
+      "replace": "Uzbekistan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "vanuatu",
+      "replace": "Vanuatu",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "vatican city",
+      "replace": "Vatican City",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "venezuela",
+      "replace": "Venezuela",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "vietnam",
+      "replace": "Vietnam",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "yemen",
+      "replace": "Yemen",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "zambia",
+      "replace": "Zambia",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "zimbabwe",
+      "replace": "Zimbabwe",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "afghan",
+      "replace": "Afghan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "albanian",
+      "replace": "Albanian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "algerian",
+      "replace": "Algerian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "american",
+      "replace": "American",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "andorran",
+      "replace": "Andorran",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "angolan",
+      "replace": "Angolan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "antiguan",
+      "replace": "Antiguan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "argentinian",
+      "replace": "Argentinian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "armenian",
+      "replace": "Armenian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "australian",
+      "replace": "Australian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "austrian",
+      "replace": "Austrian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "azerbaijani",
+      "replace": "Azerbaijani",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "bahamian",
+      "replace": "Bahamian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "bahraini",
+      "replace": "Bahraini",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "bangladeshi",
+      "replace": "Bangladeshi",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "barbadian",
+      "replace": "Barbadian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "belarusian",
+      "replace": "Belarusian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "belgian",
+      "replace": "Belgian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "belizean",
+      "replace": "Belizean",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "beninese",
+      "replace": "Beninese",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "bhutanese",
+      "replace": "Bhutanese",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "bolivian",
+      "replace": "Bolivian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "bosnian",
+      "replace": "Bosnian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "botswanan",
+      "replace": "Botswanan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "brazilian",
+      "replace": "Brazilian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "british",
+      "replace": "British",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "bruneian",
+      "replace": "Bruneian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "bulgarian",
+      "replace": "Bulgarian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "burkinabe",
+      "replace": "Burkinabe",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "burmese",
+      "replace": "Burmese",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "burundian",
+      "replace": "Burundian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "cambodian",
+      "replace": "Cambodian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "cameroonian",
+      "replace": "Cameroonian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "canadian",
+      "replace": "Canadian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "cape verdean",
+      "replace": "Cape Verdean",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "central african",
+      "replace": "Central African",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "chadian",
+      "replace": "Chadian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "chilean",
+      "replace": "Chilean",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "chinese",
+      "replace": "Chinese",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "colombian",
+      "replace": "Colombian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "comorian",
+      "replace": "Comorian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "congolese",
+      "replace": "Congolese",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "costa rican",
+      "replace": "Costa Rican",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "croatian",
+      "replace": "Croatian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "cuban",
+      "replace": "Cuban",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "cypriot",
+      "replace": "Cypriot",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "czech",
+      "replace": "Czech",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "danish",
+      "replace": "Danish",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "djiboutian",
+      "replace": "Djiboutian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "dominican",
+      "replace": "Dominican",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "east timorese",
+      "replace": "East Timorese",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ecuadorian",
+      "replace": "Ecuadorian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "egyptian",
+      "replace": "Egyptian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "salvadoran",
+      "replace": "Salvadoran",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "equatorial guinean",
+      "replace": "Equatorial Guinean",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "eritrean",
+      "replace": "Eritrean",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "estonian",
+      "replace": "Estonian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ethiopian",
+      "replace": "Ethiopian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "fijian",
+      "replace": "Fijian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "filipino",
+      "replace": "Filipino",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "finnish",
+      "replace": "Finnish",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "french",
+      "replace": "French",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "gabonese",
+      "replace": "Gabonese",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "gambian",
+      "replace": "Gambian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "georgian",
+      "replace": "Georgian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "german",
+      "replace": "German",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ghanaian",
+      "replace": "Ghanaian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "greek",
+      "replace": "Greek",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "grenadian",
+      "replace": "Grenadian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "guatemalan",
+      "replace": "Guatemalan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "guinean",
+      "replace": "Guinean",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "guyanese",
+      "replace": "Guyanese",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "haitian",
+      "replace": "Haitian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "honduran",
+      "replace": "Honduran",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "hungarian",
+      "replace": "Hungarian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "icelandic",
+      "replace": "Icelandic",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "indian",
+      "replace": "Indian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "indonesian",
+      "replace": "Indonesian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "iranian",
+      "replace": "Iranian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "iraqi",
+      "replace": "Iraqi",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "irish",
+      "replace": "Irish",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "israeli",
+      "replace": "Israeli",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "italian",
+      "replace": "Italian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "jamaican",
+      "replace": "Jamaican",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "japanese",
+      "replace": "Japanese",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "jordanian",
+      "replace": "Jordanian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "kazakhstani",
+      "replace": "Kazakhstani",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "kenyan",
+      "replace": "Kenyan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "kiribatian",
+      "replace": "Kiribatian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "kosovar",
+      "replace": "Kosovar",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "kuwaiti",
+      "replace": "Kuwaiti",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "kyrgyz",
+      "replace": "Kyrgyz",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "laotian",
+      "replace": "Laotian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "latvian",
+      "replace": "Latvian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "lebanese",
+      "replace": "Lebanese",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "mosotho",
+      "replace": "Mosotho",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "liberian",
+      "replace": "Liberian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "libyan",
+      "replace": "Libyan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "liechtensteiner",
+      "replace": "Liechtensteiner",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "lithuanian",
+      "replace": "Lithuanian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "luxembourger",
+      "replace": "Luxembourger",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "macedonian",
+      "replace": "Macedonian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "malagasy",
+      "replace": "Malagasy",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "malawian",
+      "replace": "Malawian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "malaysian",
+      "replace": "Malaysian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "maldivian",
+      "replace": "Maldivian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "malian",
+      "replace": "Malian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "mLaltese",
+      "replace": "MLaltese",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "marshallese",
+      "replace": "Marshallese",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "mauritanian",
+      "replace": "Mauritanian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "mauritian",
+      "replace": "Mauritian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "mexican",
+      "replace": "Mexican",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "micronesian",
+      "replace": "Micronesian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "moldovan",
+      "replace": "Moldovan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "monacan",
+      "replace": "Monacan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "mongolian",
+      "replace": "Mongolian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "montenegrin",
+      "replace": "Montenegrin",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "moroccan",
+      "replace": "Moroccan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "mozambican",
+      "replace": "Mozambican",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "myanmar",
+      "replace": "Myanmar",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "namibian",
+      "replace": "Namibian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "nauruan",
+      "replace": "Nauruan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "nepali",
+      "replace": "Nepali",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "dutch",
+      "replace": "Dutch",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "new zealander",
+      "replace": "New Zealander",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "nicaraguan",
+      "replace": "Nicaraguan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "nigerien",
+      "replace": "Nigerien",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "nigerian",
+      "replace": "Nigerian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "north korean",
+      "replace": "North Korean",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "norwegian",
+      "replace": "Norwegian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "omani",
+      "replace": "Omani",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "pakistani",
+      "replace": "Pakistani",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "palauan",
+      "replace": "Palauan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "panamanian",
+      "replace": "Panaman",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "papua new guinean",
+      "replace": "Papua New Guinean",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "paraguayan",
+      "replace": "Paraguayan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "peruvian",
+      "replace": "Peruvian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "polish",
+      "replace": "Polish",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "portuguese",
+      "replace": "Portuguese",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "qatari",
+      "replace": "Qatari",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "romanian",
+      "replace": "Romanian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "russian",
+      "replace": "Russian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "rwandan",
+      "replace": "Rwandan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "saint lucian",
+      "replace": "Saint Lucian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "samoan",
+      "replace": "Samoan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "san marinese",
+      "replace": "San Marinese",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "sao tomean",
+      "replace": "Sao Tomean",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "saudi",
+      "replace": "Saudi",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "scottish",
+      "replace": "Scottish",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "senegalese",
+      "replace": "Senegalese",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "serbian",
+      "replace": "Serbian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "seychellois",
+      "replace": "Seychellois",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "sierra leonean",
+      "replace": "Sierra Leonean",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "singaporean",
+      "replace": "Singaporean",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "slovak",
+      "replace": "Slovak",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "slovenian",
+      "replace": "Slovenian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "solomon islander",
+      "replace": "Solomon Islander",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "somali",
+      "replace": "Somali",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "south african",
+      "replace": "South African",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "south korean",
+      "replace": "South Korean",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "south sudanese",
+      "replace": "South Sudanese",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "spanish",
+      "replace": "Spanish",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "sri lankan",
+      "replace": "Sri Lankan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "sudanese",
+      "replace": "Sudanese",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "surinamese",
+      "replace": "Surinamese",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "swazi",
+      "replace": "Swazi",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "swedish",
+      "replace": "Swedish",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "swiss",
+      "replace": "Swiss",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "syrian",
+      "replace": "Syrian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "taiwanese",
+      "replace": "Taiwanese",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "tajik",
+      "replace": "Tajik",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "tanzanian",
+      "replace": "Tanzanian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "thai",
+      "replace": "Thai",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "togolese",
+      "replace": "Togolese",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "tongan",
+      "replace": "Tongan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "trinidadian",
+      "replace": "Trinidadian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "tunisian",
+      "replace": "Tunisian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "turkish",
+      "replace": "Turkish",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "turkmen",
+      "replace": "Turkmen",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "tuvaluan",
+      "replace": "Tuvaluan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ugandan",
+      "replace": "Ugandan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ukrainian",
+      "replace": "Ukrainian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "emirati",
+      "replace": "Emirati",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "uruguayan",
+      "replace": "Uruguayan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "uzbek",
+      "replace": "Uzbek",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "vanuatuan",
+      "replace": "Vanuatuan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "vatican",
+      "replace": "Vatican",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "venezuelan",
+      "replace": "Venezuelan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "vietnamese",
+      "replace": "Vietnamese",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "welsh",
+      "replace": "Welsh",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "yemeni",
+      "replace": "Yemeni",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "zambian",
+      "replace": "Zambian",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "zimbabwean",
+      "replace": "Zimbabwean",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "amsterdam",
+      "replace": "Amsterdam",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "athens",
+      "replace": "Athens",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "barcelona",
+      "replace": "Barcelona",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "berlin",
+      "replace": "Berlin",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "brussels",
+      "replace": "Brussels",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "budapest",
+      "replace": "Budapest",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "copenhagen",
+      "replace": "Copenhagen",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "dublin",
+      "replace": "Dublin",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "edinburgh",
+      "replace": "Edinburgh",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "florence",
+      "replace": "Florence",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "frankfurt",
+      "replace": "Frankfurt",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "geneva",
+      "replace": "Geneva",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "hamburg",
+      "replace": "Hamburg",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "helsinki",
+      "replace": "Helsinki",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "istanbul",
+      "replace": "Istanbul",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "krakow",
+      "replace": "Krakow",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "lisbon",
+      "replace": "Lisbon",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "london",
+      "replace": "London",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "madrid",
+      "replace": "Madrid",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "milan",
+      "replace": "Milan",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "moscow",
+      "replace": "Moscow",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "munich",
+      "replace": "Munich",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "oslo",
+      "replace": "Oslo",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "paris",
+      "replace": "Paris",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "prague",
+      "replace": "Prague",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "rome",
+      "replace": "Rome",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "stockholm",
+      "replace": "Stockholm",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "vienna",
+      "replace": "Vienna",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "warsaw",
+      "replace": "Warsaw",
+      "propagate_case": true,
+      "word": true  
+      
+    },
+    {
+      "trigger": "zurich",
+      "replace": "Zurich",
+      "propagate_case": true,
+      "word": true  
+    },
+    {
+      "trigger": "ddd",
+      "replace": "{{berlin_time}}",
+      "word": true,
+      "vars": [
+        {
+          "name": "berlin_time",
+          "type": "date",
+          "params": {
+            "format": "%H:%M %Z (GMT%z)",
+            "timezone": "Europe/Berlin"
+          }
+        }
+      ]
+    }
+    
+  ]
+}
+

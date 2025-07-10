@@ -1,0 +1,45 @@
+/* SF Pro Font for Google Meet - Arc Boost Version */
+
+/* Apply font to text elements only - surgical approach */
+p, h1, h2, h3, h4, h5, h6, 
+a:not([class*="icon"]):not([aria-label*="mic"]):not([aria-label*="camera"]), 
+li:not([class*="icon"]), 
+td, th, 
+label:not([class*="icon"]), 
+input[type="text"], 
+input[type="email"], 
+textarea, 
+blockquote, cite,
+/* Google Meet specific text areas */
+[jsname="xySENc"],
+[jsname="Ypafjf"],
+div[jsname="tgaKEf"],
+.z38b6,
+.CYZUZd,
+.GDhqjd,
+.Mz6pEf,
+.TBMuR,
+.KV1GEc,
+.ZjFb7c,
+.VfPpkd-rymPhb-fpDzbe-fmcmS,
+.VfPpkd-rymPhb-L8ivfd-fmcmS {
+    font-family: "SF Pro", "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* Explicitly preserve all icon fonts */
+.google-symbols,
+.material-icons,
+.material-symbols-outlined,
+i[class*="google-symbols"],
+i[class*="material"],
+i.google-symbols,
+.VfPpkd-kBDsod,
+.quRWN-Bz112c,
+[aria-label*="mic"] *,
+[aria-label*="camera"] *,
+[aria-label*="present"] *,
+[aria-label*="hand"] *,
+[aria-label*="more"] *,
+[aria-hidden="true"] i {
+    font-family: "Google Symbols", "Material Icons" !important;
+} 

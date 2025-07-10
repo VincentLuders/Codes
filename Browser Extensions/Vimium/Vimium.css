@@ -1,0 +1,56 @@
+﻿/* Link hints with glassy effect and subtle animation */
+.LH,
+.D>.LH {
+    background: rgba(28, 28, 30, 0.65) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(56, 56, 58, 0.2) !important;
+    border-radius: 8px !important;
+    font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.25),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(12px) saturate(180%) !important;
+    padding: 3px 5px !important;
+    transform: scale(1.05) !important;
+    transform-origin: left top !important;
+    transition: all 0.15s ease-out !important;
+}
+
+.LH:hover,
+.D>.LH:hover {
+    transform: scale(1.1) !important;
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.35),
+        inset 0 1px 1px rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Hint markers styling with glow effect */
+.HM {
+    font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-weight: 600 !important;
+    background: linear-gradient(135deg, rgba(10, 132, 255, 0.8), rgba(48, 200, 255, 0.8)) !important;
+    color: #ffffff !important;
+    border-radius: 5px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow:
+        0 1px 5px rgba(10, 132, 255, 0.4),
+        0 0 10px rgba(10, 132, 255, 0.2) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+    padding: 1px 5px !important;
+    font-size: 14px !important;
+    margin: 0 !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Match highlight in hint markers - Apple blue color for highlighted letter */
+.HM .M {
+    color: #007AFF !important;
+    /* Apple blue color */
+    font-weight: 800 !important;
+    text-shadow: 0 0 3px rgba(0, 122, 255, 0.4) !important;
+    /* Subtle glow effect */
+    background: none !important;
+    padding: 0 !important;
+    text-decoration: none !important;
+}
+

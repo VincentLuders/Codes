@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Manager Extension",
+  "version": "1.0",
+  "description": "Manage tabs between foreground and background windows.",
+  "permissions": [
+    "tabs",
+    "commands",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "attach_tab": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+A"
+      },
+      "description": "Attach tab to main window"
+    },
+    "detach_tab": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+D"
+      },
+      "description": "Detach tab to background window"
+    }
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  }
+}

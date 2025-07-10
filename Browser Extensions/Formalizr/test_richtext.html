@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formalizr Rich Text Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .test-section {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .rich-editor {
+            min-height: 150px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+        
+        button {
+            background: #007cba;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        button:hover {
+            background: #005a87;
+        }
+        
+        .instructions {
+            background: #f0f8ff;
+            padding: 15px;
+            border-left: 4px solid #007cba;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formalizr Rich Text Test Page</h1>
+    
+    <div class="instructions">
+        <h3>Testing Instructions:</h3>
+        <ol>
+            <li>Make sure the Formalizr extension is installed and enabled</li>
+            <li>Type some text in the fields below (use formatting in the rich text editor)</li>
+            <li>The extension should detect and save your input with formatting</li>
+            <li>Open the Formalizr popup to see the saved data</li>
+            <li>Test copying - rich text should preserve formatting when pasted into compatible applications</li>
+        </ol>
+    </div>
+
+    <div class="test-section">
+        <h3>1. Plain Text Input</h3>
+        <label for="plain-input">Regular text input:</label>
+        <input type="text" id="plain-input" name="plain-input" placeholder="Type some plain text here...">
+    </div>
+
+    <div class="test-section">
+        <h3>2. Textarea</h3>
+        <label for="text-area">Textarea:</label>
+        <textarea id="text-area" name="text-area" placeholder="Type multi-line text here..."></textarea>
+    </div>
+
+    <div class="test-section">
+        <h3>3. Rich Text Editor (ContentEditable)</h3>
+        <label>Rich text editor - try formatting with Ctrl+B, Ctrl+I, etc.:</label>
+        <div id="rich-editor" class="rich-editor" contenteditable="true">
+            <p>Type here and use <strong>bold</strong>, <em>italic</em>, and other formatting!</p>
+            <ul>
+                <li>You can create lists</li>
+                <li>Add <u>underlined text</u></li>
+                <li>Try different formatting options</li>
+            </ul>
+        </div>
+        
+        <div style="margin-top: 10px;">
+            <button onclick="makeBold()">Bold</button>
+            <button onclick="makeItalic()">Italic</button>
+            <button onclick="makeUnderline()">Underline</button>
+            <button onclick="insertList()">List</button>
+            <button onclick="clearFormatting()">Clear</button>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h3>4. Email Input</h3>
+        <label for="email-input">Email input:</label>
+        <input type="email" id="email-input" name="email-input" placeholder="Enter email address...">
+    </div>
+
+    <div class="test-section">
+        <h3>5. Multiple Rich Text Areas</h3>
+        <label>First rich text area:</label>
+        <div id="rich-editor-2" class="rich-editor" contenteditable="true">
+            <p>This is another rich text area for testing multiple editors.</p>
+        </div>
+        
+        <label>Second rich text area:</label>
+        <div id="rich-editor-3" class="rich-editor" contenteditable="true">
+            <p>You can format text differently in each area.</p>
+        </div>
+    </div>
+
+    <script>
+        // Rich text editor helper functions
+        function makeBold() {
+            document.execCommand('bold', false, null);
+            document.getElementById('rich-editor').focus();
+        }
+        
+        function makeItalic() {
+            document.execCommand('italic', false, null);
+            document.getElementById('rich-editor').focus();
+        }
+        
+        function makeUnderline() {
+            document.execCommand('underline', false, null);
+            document.getElementById('rich-editor').focus();
+        }
+        
+        function insertList() {
+            document.execCommand('insertUnorderedList', false, null);
+            document.getElementById('rich-editor').focus();
+        }
+        
+        function clearFormatting() {
+            var editor = document.getElementById('rich-editor');
+            editor.innerHTML = '<p>Start typing with formatting...</p>';
+            editor.focus();
+        }
+
+        // Add some sample data after page loads
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                // Add some initial content to test with
+                document.getElementById('plain-input').value = "Sample plain text for testing";
+                document.getElementById('email-input').value = "test@example.com";
+                document.getElementById('text-area').value = "This is sample textarea content\nwith multiple lines\nfor testing purposes.";
+            }, 1000);
+        });
+    </script>
+</body>
+</html> 

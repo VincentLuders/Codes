@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Arc Tab Navigator",
+    "version": "1.0",
+    "description": "Navigate Arc tabs using W and R keys.",
+    "permissions": [
+        "tabs",
+        "storage"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "commands": {
+        "move-left": {
+            "suggested_key": {
+                "default": "Ctrl+W"
+            },
+            "description": "Move to the tab above"
+        },
+        "move-right": {
+            "suggested_key": {
+                "default": "Ctrl+R"
+            },
+            "description": "Move to the tab below"
+        }
+    }
+}
